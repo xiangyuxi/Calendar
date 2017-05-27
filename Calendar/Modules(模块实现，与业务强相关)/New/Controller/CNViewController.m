@@ -11,13 +11,10 @@
 #import "CNTimeCell.h"
 #import "CNTitleCell.h"
 #import "CDatePickerView.h"
+#import "CNCellModel.h"
 
 static NSString *timeCellIdentifier = @"time";
 static NSString *titleCellIdentifier = @"title";
-
-@implementation CNCellModel
-
-@end
 
 @interface CNViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -68,6 +65,11 @@ static NSString *titleCellIdentifier = @"title";
     self.tableView.dataSource = self;
     
     [[self.menuButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(VBFPopFlatButton *sender) {
+        if (sender.currentButtonType == buttonOkType) {
+            
+        }else if (sender.currentButtonType == buttonCloseType) {
+            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        }
     }];
     [[RACSignal combineLatest:@[RACObserve(self, model.title)]] subscribeNext:^(NSArray *x) {
         if (((NSString *)x[0]).length > 0) {

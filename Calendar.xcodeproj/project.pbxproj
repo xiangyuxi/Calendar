@@ -62,6 +62,7 @@
 		0698A9681EAF2966005B375D /* GFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A9431EAF2966005B375D /* GFModel.m */; };
 		0698A9691EAF2966005B375D /* GFRegularExp.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A9461EAF2966005B375D /* GFRegularExp.m */; };
 		0698A9821EAF53E4005B375D /* CTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A9811EAF53E4005B375D /* CTools.m */; };
+		06ADC9D11ED9799400962435 /* CNCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 06ADC9D01ED9799400962435 /* CNCellModel.m */; };
 		26A5F09D7F9C0F44FABE6083 /* libPods-Calendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A76919E0E6A743EA9A81F7 /* libPods-Calendar.a */; };
 /* End PBXBuildFile section */
 
@@ -208,6 +209,8 @@
 		0698A9731EAF307C005B375D /* Calendar_pch.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Calendar_pch.pch; sourceTree = "<group>"; };
 		0698A9801EAF53E4005B375D /* CTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTools.h; sourceTree = "<group>"; };
 		0698A9811EAF53E4005B375D /* CTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTools.m; sourceTree = "<group>"; };
+		06ADC9CF1ED9799400962435 /* CNCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CNCellModel.h; path = "Calendar/Modules(模块实现，与业务强相关)/Home/Model/CNCellModel.h"; sourceTree = SOURCE_ROOT; };
+		06ADC9D01ED9799400962435 /* CNCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CNCellModel.m; path = "Calendar/Modules(模块实现，与业务强相关)/Home/Model/CNCellModel.m"; sourceTree = SOURCE_ROOT; };
 		806443068E05BACF2A19C074 /* Pods-Calendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Calendar/Pods-Calendar.debug.xcconfig"; sourceTree = "<group>"; };
 		82A76919E0E6A743EA9A81F7 /* libPods-Calendar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Calendar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58A1B76C4959B23D27C572D /* Pods-Calendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Calendar/Pods-Calendar.release.xcconfig"; sourceTree = "<group>"; };
@@ -263,6 +266,8 @@
 		0670AA471EC1A71500472EB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				06ADC9CF1ED9799400962435 /* CNCellModel.h */,
+				06ADC9D01ED9799400962435 /* CNCellModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -935,6 +940,7 @@
 				0698A9531EAF2966005B375D /* UIButton+Highlight.m in Sources */,
 				0698A9511EAF2966005B375D /* NSString+Pinyin.m in Sources */,
 				0698A9471EAF2966005B375D /* NSData+Base64.m in Sources */,
+				06ADC9D11ED9799400962435 /* CNCellModel.m in Sources */,
 				0698A94B1EAF2966005B375D /* NSString+Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,13 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CNCellModel : NSObject
-
-@property(copy, nonatomic) NSDate *date;
-@property(copy, nonatomic) NSString *title;
-
-@end
-
 @interface CNViewController : UIViewController
 
 @end

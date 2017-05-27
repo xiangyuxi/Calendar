@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CNViewController.h"
+#import "CNCellModel.h"
 
 @interface CNTitleCell : UITableViewCell
 
