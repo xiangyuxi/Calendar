@@ -18,11 +18,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
-    [[RACObserve(self, date) map:^id(NSDate *value) {
+    RAC(self.timeLabel, text) = [RACObserve(self, model.date) map:^id(NSDate *value) {
         return [value convertToStringWithFormatter:@"HH:mm"];
-    }] subscribeNext:^(NSString *x) {
-        self.timeLabel.text = x;
     }];
 }
 

@@ -46,11 +46,12 @@
     [[self.menuButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(VBFPopFlatButton *sender) {
         @strongify(self)
         if (self.menuButton.currentButtonType == buttonOkType && self.titleDidChangedBlock) {
-            self.titleDidChangedBlock(self.textField.text);
-            [self.navigationController popViewControllerAnimated:YES];
+            
         }else {
             
         }
+        self.titleDidChangedBlock(self.textField.text);
+        [self.navigationController popViewControllerAnimated:YES];
     }];
     [self.textField.rac_textSignal subscribeNext:^(NSString *x) {
         if (x.length > 0) {

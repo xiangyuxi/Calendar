@@ -19,14 +19,14 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    [RACObserve(self, title) subscribeNext:^(NSString *x) {
+    RAC(self.titleLabel, text) = [RACObserve(self, model.title) map:^id(NSString *x) {
         if (x.length < 1) {
             self.titleLabel.textColor = [UIColor colorWithHex:0x999999];
-            self.titleLabel.text = @"请填入一个响亮的标题";
+            x = @"请填入一个响亮的标题";
         }else {
             self.titleLabel.textColor = [UIColor blackColor];
-            self.titleLabel.text = x;
         }
+        return x;
     }];
 }
 

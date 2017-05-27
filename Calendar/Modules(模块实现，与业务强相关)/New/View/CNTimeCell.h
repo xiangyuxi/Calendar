@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CNViewController.h"
 
 @interface CNTimeCell : UITableViewCell
 
-@property (copy, nonatomic) NSDate *date;
+@property (strong, nonatomic) CNCellModel *model;
 
 @end

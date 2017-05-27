@@ -35,16 +35,20 @@ static CGFloat CDefaultConstraintLayout = 260;
     
     self.datePicker.backgroundColor = [UIColor whiteColor];
     self.date = self.datePicker.date;
-    if (self.type == CDatePickerTypeTime) {
+    [[self.datePicker rac_signalForControlEvents:UIControlEventValueChanged] subscribeNext:^(UIDatePicker *dPicker) {
+        self.date = dPicker.date;
+    }];
+}
+
+- (void)setType:(CDatePickerType)type {
+    _type = type;
+    if (_type == CDatePickerTypeTime) {
         NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"];
         self.datePicker.locale = locale;
         self.datePicker.datePickerMode = UIDatePickerModeTime;
     }else {
         self.datePicker.datePickerMode = UIDatePickerModeDate;
     }
-    [[self.datePicker rac_signalForControlEvents:UIControlEventValueChanged] subscribeNext:^(UIDatePicker *dPicker) {
-        self.date = dPicker.date;
-    }];
 }
 
 - (IBAction)sureAction:(id)sender {

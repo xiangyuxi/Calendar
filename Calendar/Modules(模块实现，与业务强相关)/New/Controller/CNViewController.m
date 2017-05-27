@@ -15,6 +15,10 @@
 static NSString *timeCellIdentifier = @"time";
 static NSString *titleCellIdentifier = @"title";
 
+@implementation CNCellModel
+
+@end
+
 @interface CNViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -23,13 +27,11 @@ static NSString *titleCellIdentifier = @"title";
 
 @property (nonatomic, copy) NSArray *dateArray; // [year,month,day]
 
-@property (copy, nonatomic) NSString *cellTitle;
-
-@property (copy, nonatomic) NSDate *cellDate;
-
 @property (copy, nonatomic) VBFPopFlatButton *menuButton;
 
 @property (weak, nonatomic) IBOutlet UIView *cnewNavigationBar;
+
+@property (strong, nonatomic) CNCellModel *model;
 
 @end
 
@@ -54,32 +56,35 @@ static NSString *titleCellIdentifier = @"title";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    self.model = [CNCellModel new];
+    self.model.date =
+    _cacheDate = [NSDate date];
+    
     self.dateArray = [self.title componentsSeparatedByString:@"-"];
     [self.titleBtn setTitle:[self _titleBtnTitle] forState:UIControlStateNormal];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.cellDate =
-    _cacheDate = [NSDate date];
-    
     [[self.menuButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(VBFPopFlatButton *sender) {
     }];
-    [[RACSignal combineLatest:@[RACObserve(self, cellTitle)]] subscribeNext:^(NSArray *x) {
+    [[RACSignal combineLatest:@[RACObserve(self, model.title)]] subscribeNext:^(NSArray *x) {
         if (((NSString *)x[0]).length > 0) {
             [self.menuButton animateToType:buttonOkType];
+        }else {
+            [self.menuButton animateToType:buttonCloseType];
         }
     }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     CNEditViewController *editController = segue.destinationViewController;
-    editController.defaultString = self.cellTitle;
+    editController.defaultString = self.model.title;
     @weakify(self)
     editController.titleDidChangedBlock = ^(NSString *text) {
         @strongify(self)
-        self.cellTitle = text;
+        self.model.title = text;
     };
 }
 
@@ -108,7 +113,7 @@ static NSString *titleCellIdentifier = @"title";
         @weakify(self)
         CDatePickerView *dateView = [CDatePickerView loadInstanceFromNibWithSelectedBlock:^(NSDate *date) {
             @strongify(self)
-            self.cellDate = date;
+            self.model.date = date;
         }];
         dateView.type = CDatePickerTypeTime;
         [dateView showDatePickerView];
@@ -126,16 +131,13 @@ static NSString *titleCellIdentifier = @"title";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0)
-    {
+    if (indexPath.row == 0) {
         CNTimeCell *cell = [tableView dequeueReusableCellWithIdentifier:timeCellIdentifier forIndexPath:indexPath];
-        RAC(cell,date) = RACObserve(self, cellDate);
+        cell.model = self.model;
         return cell;
-    }
-    else
-    {
+    }else {
         CNTitleCell *cell = [tableView dequeueReusableCellWithIdentifier:titleCellIdentifier forIndexPath:indexPath];
-        RAC(cell,title) = RACObserve(self, cellTitle);
+        cell.model = self.model;
         return cell;
     }
 }

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CNViewController.h"
 
 @interface CNTitleCell : UITableViewCell
 
-@property (copy, nonatomic) NSString *title;
+@property (strong, nonatomic) CNCellModel *model;
 
 @end
