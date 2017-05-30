@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D91C4A055C428689FB7878DD3F19BE50'
-               BlueprintName = 'Pods-Calendar'
+               BlueprintIdentifier = '7C3169A556B27DD51CE970DA5118CE98'
+               BlueprintName = 'UICountingLabel'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-Calendar.a'>
+               BuildableName = 'libUICountingLabel.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

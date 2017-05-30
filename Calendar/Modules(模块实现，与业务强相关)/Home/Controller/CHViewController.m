@@ -19,6 +19,7 @@ static NSString *weatherIdentifer = @"weather";
 @property (weak, nonatomic) IBOutlet UIButton *yearMonthBtn;
 @property (weak, nonatomic) IBOutlet UIView *homeNavgationBar;
 @property (weak, nonatomic) IBOutlet UIView *waterWaveView;
+@property (weak, nonatomic) IBOutlet UILabel *staticLabel;
 
 @property (assign, nonatomic) CGFloat waveHeight;
 @property (assign, nonatomic) CGFloat waveWidth;
@@ -37,11 +38,26 @@ static NSString *weatherIdentifer = @"weather";
 @property (assign, nonatomic) NSInteger month;
 @property (assign, nonatomic) NSInteger day;
 
+@property (copy, nonatomic) UICountingLabel *countingLabel;
+
 @end
 
 @implementation CHViewController
 
 #pragma mark - Properties
+
+- (UICountingLabel *)countingLabel {
+    if (!_countingLabel) {
+        _countingLabel = [[UICountingLabel alloc] initWithFrame:CGRectMake(0, 30, kScrWidth, 50)];
+        _countingLabel.font = [UIFont boldSystemFontOfSize:40];
+        _countingLabel.textAlignment = NSTextAlignmentCenter;
+        _countingLabel.textColor = [UIColor colorWithHex:0x3DA1FF];
+        _countingLabel.format = @"%.2f";
+        _countingLabel.positiveFormat = @"###,##0.00";
+        [self.waterWaveView addSubview:_countingLabel];
+    }
+    return _countingLabel;
+}
 
 - (VBFPopFlatButton *)menuButton {
     if (!_menuButton) {
@@ -49,7 +65,7 @@ static NSString *weatherIdentifer = @"weather";
                                                    buttonType:buttonMenuType
                                                   buttonStyle:buttonPlainStyle
                                         animateToInitialState:NO];
-        [_menuButton setTintColor:[UIColor blackColor]];
+        _menuButton.tintColor = [UIColor colorWithHex:0x3DA1FF];
         [self.homeNavgationBar addSubview:_menuButton];
     }
     return _menuButton;
@@ -70,6 +86,8 @@ static NSString *weatherIdentifer = @"weather";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.countingLabel.text = @"0.00";
     
     self.currentDate = [NSDate date];
     
@@ -98,6 +116,11 @@ static NSString *weatherIdentifer = @"weather";
     [self.waveDisplayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.countingLabel countFromCurrentValueTo:-3048.64];
+}
+
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [self.waveDisplayLink invalidate];
@@ -117,18 +140,21 @@ static NSString *weatherIdentifer = @"weather";
     
     self.offsetX =
     self.offsetXT= 80;
-    self.waveSpeed = 0.2; // 水波速度
+    self.waveSpeed = 0.5; // 水波速度
     self.waveWidth = kScrWidth; // 水波长度（直线）
-    self.waveHeight = 75; // x轴
-    self.waveAmplitude = 15; // 振幅
+    self.waveHeight = 55; // x轴
+    self.waveAmplitude = 8; // 振幅
     
     self.waveShapeLayer = [CAShapeLayer layer];
-    self.waveShapeLayer.fillColor = [UIColor colorWithHex:0x2A00FD alpha:0.4].CGColor;
+    self.waveShapeLayer.fillColor = [UIColor colorWithRed:157/255.0 green:206/255.0 blue:1 alpha:0.6].CGColor;
     [self.waterWaveView.layer addSublayer:self.waveShapeLayer];
     
     self.waveShapeLayerT = [CAShapeLayer layer];
-    self.waveShapeLayerT.fillColor = [UIColor colorWithHex:0x2A00FD alpha:0.2].CGColor;
+    self.waveShapeLayerT.fillColor = [UIColor colorWithRed:201/255.0 green:228/255.0 blue:1 alpha:0.6].CGColor;
     [self.waterWaveView.layer addSublayer:self.waveShapeLayerT];
+    
+    [self.waterWaveView bringSubviewToFront:self.countingLabel];
+    [self.waterWaveView bringSubviewToFront:self.staticLabel];
 }
 
 #pragma mark - Actions

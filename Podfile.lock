@@ -28,6 +28,7 @@ PODS:
   - ReactiveCocoa/no-arc (2.5)
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
+  - UICountingLabel (1.4.0)
   - VBFPopFlatButton (0.0.7):
     - pop
   - YBPopupMenu (1.0.0)
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - MJExtension
   - pop
   - ReactiveCocoa
+  - UICountingLabel
   - VBFPopFlatButton
   - YBPopupMenu
 
@@ -51,9 +53,10 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  UICountingLabel: ed5ce5b6d5ef278ff40d99cfa49577a30ab0c87b
   VBFPopFlatButton: 39e48ab56277f3d056734a9b5ec5d0cc60d69778
   YBPopupMenu: b466cf9daa0d341ea15c5ad709247546051c4d86
 
-PODFILE CHECKSUM: 8998ef28bf022ca8c959608a60eef5f6d79df3bc
+PODFILE CHECKSUM: af434abbaa059e277284808adde62e8c22ccb436
 
 COCOAPODS: 1.2.1

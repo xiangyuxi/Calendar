@@ -10,4 +10,5 @@ target “Calendar” do
     pod 'pop'
     pod 'VBFPopFlatButton'
     pod 'YBPopupMenu'
+    pod 'UICountingLabel'
 end

@@ -27,13 +27,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5u-wT-twx">
-                                        <rect key="frame" x="153" y="25" width="69" height="33"/>
+                                        <rect key="frame" x="141" y="25" width="93" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="33" id="JrG-8R-KZW"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                        <state key="normal" title="2015 / 5">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="2015年5月">
+                                            <color key="titleColor" red="0.23921568627450979" green="0.63137254901960782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="yearMonthAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4P9-Jf-wg1"/>
@@ -48,7 +48,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="65" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="qhy-0u-o9c">
-                                <rect key="frame" x="0.0" y="214" width="375" height="453"/>
+                                <rect key="frame" x="0.0" y="184" width="375" height="483"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="weather" rowHeight="104" id="59P-yW-gdp" customClass="CWeatherCell">
@@ -69,7 +69,7 @@
                                                         <constraint firstAttribute="width" secondItem="2BM-yC-igU" secondAttribute="height" id="onO-Ap-r0f"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
-                                                    <color key="textColor" red="0.16470588235294117" green="0.0" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.23921568630000001" green="0.63137254899999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期三   正月初十" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gyi-oG-Jra">
@@ -160,10 +160,20 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dD-pR-kFD">
-                                <rect key="frame" x="0.0" y="64" width="375" height="150"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本月总盈亏（元）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSg-Dq-kRQ">
+                                        <rect key="frame" x="140.5" y="84" width="106.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.23921568630000001" green="0.63137254899999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="1Ed-s1-gkd"/>
+                                    <constraint firstAttribute="height" constant="120" id="1Ed-s1-gkd"/>
+                                    <constraint firstItem="vSg-Dq-kRQ" firstAttribute="centerX" secondItem="9dD-pR-kFD" secondAttribute="centerX" constant="6" id="fzu-2i-kht"/>
+                                    <constraint firstAttribute="bottom" secondItem="vSg-Dq-kRQ" secondAttribute="bottom" constant="20" id="p8y-H5-Oym"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -184,6 +194,7 @@
                     <navigationItem key="navigationItem" id="BkW-Qy-L0b"/>
                     <connections>
                         <outlet property="homeNavgationBar" destination="bvh-BU-HHr" id="KL6-Mv-F8T"/>
+                        <outlet property="staticLabel" destination="vSg-Dq-kRQ" id="Ou4-rE-iel"/>
                         <outlet property="tableView" destination="qhy-0u-o9c" id="ld8-A0-1wA"/>
                         <outlet property="waterWaveView" destination="9dD-pR-kFD" id="aDQ-nI-84V"/>
                         <outlet property="yearMonthBtn" destination="Q5u-wT-twx" id="qfL-4P-wmk"/>
@@ -279,7 +290,7 @@
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.1647058824" green="0.0" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.23921568630000001" green="0.63137254899999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="V3N-5Y-b6f" secondAttribute="trailing" id="2em-Te-Yui"/>
                                     <constraint firstItem="V3N-5Y-b6f" firstAttribute="leading" secondItem="GAO-cy-b1A" secondAttribute="leading" id="AQf-t9-Wdx"/>

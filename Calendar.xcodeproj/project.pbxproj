@@ -14,7 +14,6 @@
 		0698A8A51EAF28B8005B375D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A8A41EAF28B8005B375D /* main.m */; };
 		0698A8A81EAF28B8005B375D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A8A71EAF28B8005B375D /* AppDelegate.m */; };
 		0698A8AE1EAF28B8005B375D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0698A8AC1EAF28B8005B375D /* Main.storyboard */; };
-		0698A8B01EAF28B8005B375D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0698A8AF1EAF28B8005B375D /* Assets.xcassets */; };
 		0698A8B31EAF28B8005B375D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0698A8B11EAF28B8005B375D /* LaunchScreen.storyboard */; };
 		0698A8BE1EAF28B8005B375D /* CalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A8BD1EAF28B8005B375D /* CalendarTests.m */; };
 		0698A8C91EAF28B8005B375D /* CalendarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A8C81EAF28B8005B375D /* CalendarUITests.m */; };
@@ -55,6 +54,7 @@
 		0698A9821EAF53E4005B375D /* CTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A9811EAF53E4005B375D /* CTools.m */; };
 		26A5F09D7F9C0F44FABE6083 /* libPods-Calendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A76919E0E6A743EA9A81F7 /* libPods-Calendar.a */; };
 		751068111EDC6F5D00F4F21C /* CNAFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 751068101EDC6F5D00F4F21C /* CNAFlowLayout.m */; };
+		75E526691EDD7C1F0073EFFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E526681EDD7C1F0073EFFB /* Assets.xcassets */; };
 		75F5D5911EDBAE480074BED0 /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5901EDBAE480074BED0 /* UIView+Shadow.m */; };
 		75F5D5941EDBAF1A0074BED0 /* SegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5931EDBAF1A0074BED0 /* SegmentControl.m */; };
 		75F5D5971EDBC6960074BED0 /* CNAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5961EDBC6960074BED0 /* CNAddViewController.m */; };
@@ -93,7 +93,6 @@
 		0698A8A61EAF28B8005B375D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0698A8A71EAF28B8005B375D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0698A8AD1EAF28B8005B375D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0698A8AF1EAF28B8005B375D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0698A8B21EAF28B8005B375D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0698A8B41EAF28B8005B375D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0698A8B91EAF28B8005B375D /* CalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +190,7 @@
 		0698A9811EAF53E4005B375D /* CTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTools.m; sourceTree = "<group>"; };
 		7510680F1EDC6F5D00F4F21C /* CNAFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNAFlowLayout.h; sourceTree = "<group>"; };
 		751068101EDC6F5D00F4F21C /* CNAFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNAFlowLayout.m; sourceTree = "<group>"; };
+		75E526681EDD7C1F0073EFFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75F5D58E1EDBAB510074BED0 /* SCHader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCHader.h; sourceTree = "<group>"; };
 		75F5D58F1EDBAE480074BED0 /* UIView+Shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shadow.h"; sourceTree = "<group>"; };
 		75F5D5901EDBAE480074BED0 /* UIView+Shadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shadow.m"; sourceTree = "<group>"; };
@@ -330,8 +330,8 @@
 			children = (
 				0698A8A61EAF28B8005B375D /* AppDelegate.h */,
 				0698A8A71EAF28B8005B375D /* AppDelegate.m */,
+				75E526661EDD7C1F0073EFFB /* Media Resources(图片、音乐、本地plist等) */,
 				0698A8D61EAF2966005B375D /* Foundation(系统抽离) */,
-				0698A9321EAF2966005B375D /* Media Resources(图片、音乐、本地plist等) */,
 				0698A9371EAF2966005B375D /* Modules(模块实现，与业务强相关) */,
 				0698A93C1EAF2966005B375D /* Vendor(第三方、自定义与业务无关组件等) */,
 				0698A8A31EAF28B8005B375D /* Supporting Files */,
@@ -343,7 +343,6 @@
 			isa = PBXGroup;
 			children = (
 				0698A8AC1EAF28B8005B375D /* Main.storyboard */,
-				0698A8AF1EAF28B8005B375D /* Assets.xcassets */,
 				0698A8B11EAF28B8005B375D /* LaunchScreen.storyboard */,
 				0698A8B41EAF28B8005B375D /* Info.plist */,
 				0698A8A41EAF28B8005B375D /* main.m */,
@@ -566,37 +565,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		0698A9321EAF2966005B375D /* Media Resources(图片、音乐、本地plist等) */ = {
-			isa = PBXGroup;
-			children = (
-				0698A9331EAF2966005B375D /* IMG */,
-				0698A9351EAF2966005B375D /* Sound */,
-				0698A9361EAF2966005B375D /* Video */,
-			);
-			path = "Media Resources(图片、音乐、本地plist等)";
-			sourceTree = "<group>";
-		};
-		0698A9331EAF2966005B375D /* IMG */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = IMG;
-			sourceTree = "<group>";
-		};
-		0698A9351EAF2966005B375D /* Sound */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sound;
-			sourceTree = "<group>";
-		};
-		0698A9361EAF2966005B375D /* Video */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Video;
-			sourceTree = "<group>";
-		};
 		0698A9371EAF2966005B375D /* Modules(模块实现，与业务强相关) */ = {
 			isa = PBXGroup;
 			children = (
@@ -662,6 +630,22 @@
 				751068101EDC6F5D00F4F21C /* CNAFlowLayout.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		75E526661EDD7C1F0073EFFB /* Media Resources(图片、音乐、本地plist等) */ = {
+			isa = PBXGroup;
+			children = (
+				75E526671EDD7C1F0073EFFB /* IMG */,
+			);
+			path = "Media Resources(图片、音乐、本地plist等)";
+			sourceTree = "<group>";
+		};
+		75E526671EDD7C1F0073EFFB /* IMG */ = {
+			isa = PBXGroup;
+			children = (
+				75E526681EDD7C1F0073EFFB /* Assets.xcassets */,
+			);
+			path = IMG;
 			sourceTree = "<group>";
 		};
 		75F5D58D1EDBAADE0074BED0 /* SegmentControl */ = {
@@ -805,8 +789,8 @@
 			files = (
 				0698A8B31EAF28B8005B375D /* LaunchScreen.storyboard in Resources */,
 				060273A21ED7DFD500AF3707 /* CDatePickerView.xib in Resources */,
-				0698A8B01EAF28B8005B375D /* Assets.xcassets in Resources */,
 				0698A8AE1EAF28B8005B375D /* Main.storyboard in Resources */,
+				75E526691EDD7C1F0073EFFB /* Assets.xcassets in Resources */,
 				75F5D5C91EDC58970074BED0 /* YBPTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

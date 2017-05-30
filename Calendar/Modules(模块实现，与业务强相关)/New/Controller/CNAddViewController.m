@@ -47,7 +47,7 @@ static NSString *kPayTypeCellIdentifier = @"addTypeCell";
     self.textView.font = [UIFont systemFontOfSize:15];
     [self.textInputView addSubview:self.textView];
     
-    self.payOutCollectionViewImageNames = @[@"餐饮",@"车贷",@"房贷",@"家具",@"交通费用",@"旅游",@"日常开支",@"信用卡还贷",@"娱乐休闲",@"衣服",@"医疗保健",@"运动"];
+    self.payOutCollectionViewImageNames = @[@"餐饮",@"车贷",@"房贷",@"家具",@"交通费用",@"旅游",@"日常开支",@"信用卡还贷",@"娱乐休闲",@"衣服",@"医疗保健",@"运动",@"其他"];
     self.paySelectedFlag = 0;
     
     self.collectionView.collectionViewLayout = [[CNAFlowLayout alloc] init];

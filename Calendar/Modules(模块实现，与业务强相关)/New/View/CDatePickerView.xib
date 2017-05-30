@@ -30,14 +30,14 @@
                     <items>
                         <barButtonItem width="15" style="plain" systemItem="fixedSpace" id="rZZ-mC-seW"/>
                         <barButtonItem title="取消" id="BaV-En-RgB">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.23921568630000001" green="0.63137254899999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="cancleAction:" destination="iN0-l3-epB" id="m98-dd-C23"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Sci-4s-WzR"/>
                         <barButtonItem title="确定" id="ntr-Vp-GGo">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.23921568630000001" green="0.63137254899999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="sureAction:" destination="iN0-l3-epB" id="URB-eL-yKi"/>
                             </connections>
