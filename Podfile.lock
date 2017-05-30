@@ -17,6 +17,7 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - IQKeyboardManager (3.3.7)
   - JVFloatLabeledTextField (1.1.1)
   - MJExtension (3.0.13)
   - pop (1.0.9)
@@ -29,25 +30,30 @@ PODS:
     - ReactiveCocoa/Core
   - VBFPopFlatButton (0.0.7):
     - pop
+  - YBPopupMenu (1.0.0)
 
 DEPENDENCIES:
   - AFNetworking
   - FMDB
+  - IQKeyboardManager
   - JVFloatLabeledTextField
   - MJExtension
   - pop
   - ReactiveCocoa
   - VBFPopFlatButton
+  - YBPopupMenu
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
   JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   VBFPopFlatButton: 39e48ab56277f3d056734a9b5ec5d0cc60d69778
+  YBPopupMenu: b466cf9daa0d341ea15c5ad709247546051c4d86
 
-PODFILE CHECKSUM: b998e27539b1d842e99fa27fb8e95ff23bb3936b
+PODFILE CHECKSUM: 8998ef28bf022ca8c959608a60eef5f6d79df3bc
 
 COCOAPODS: 1.2.1

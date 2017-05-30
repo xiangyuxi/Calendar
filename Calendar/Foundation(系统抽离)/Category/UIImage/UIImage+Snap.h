@@ -16,4 +16,6 @@
 + (UIImage *)snapshotWithView:(UIView *)view;
 + (UIImage *)snapshotWithView:(UIView *)view size:(CGSize)snapSize;
 
++ (UIImage *)imageFromView: (UIView *)theView atFrame:(CGRect)r;
+
 @end

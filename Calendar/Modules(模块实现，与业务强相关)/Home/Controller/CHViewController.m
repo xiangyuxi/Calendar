@@ -7,30 +7,35 @@
 //
 
 #import "CHViewController.h"
-#import "CMonthView.h"
-#import "CTools.h"
 #import "CWeatherCell.h"
-#import "CWeatherModel.h"
 #import "CDatePickerView.h"
+#import "CNAddViewController.h"
 
 static NSString *weatherIdentifer = @"weather";
 
-@interface CHViewController () <CMonthViewDelegate, CWeatherCellDelegate, UITableViewDelegate, UITableViewDataSource>
-
-@property (weak, nonatomic) CMonthView *monthView;
+@interface CHViewController () <UITableViewDelegate, UITableViewDataSource, CWeatherCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstriant;
 @property (weak, nonatomic) IBOutlet UIButton *yearMonthBtn;
+@property (weak, nonatomic) IBOutlet UIView *homeNavgationBar;
+@property (weak, nonatomic) IBOutlet UIView *waterWaveView;
+
+@property (assign, nonatomic) CGFloat waveHeight;
+@property (assign, nonatomic) CGFloat waveWidth;
+@property (assign, nonatomic) CGFloat waveAmplitude;
+@property (strong, nonatomic) CAShapeLayer *waveShapeLayer;
+@property (assign, nonatomic) CGFloat offsetX;
+@property (assign, nonatomic) CGFloat waveSpeed;
+@property (strong, nonatomic) CAShapeLayer *waveShapeLayerT;
+@property (assign, nonatomic) CGFloat offsetXT;
+@property (strong, nonatomic) CADisplayLink *waveDisplayLink;
+
 @property (copy, nonatomic) VBFPopFlatButton *menuButton;
 
+@property (copy, nonatomic) NSDate *currentDate;
 @property (assign, nonatomic) NSInteger year;
 @property (assign, nonatomic) NSInteger month;
 @property (assign, nonatomic) NSInteger day;
-
-@property (strong, nonatomic) CWeatherModel *cwModel;
-
-@property (weak, nonatomic) IBOutlet UIView *homeNavgationBar;
 
 @end
 
@@ -44,9 +49,20 @@ static NSString *weatherIdentifer = @"weather";
                                                    buttonType:buttonMenuType
                                                   buttonStyle:buttonPlainStyle
                                         animateToInitialState:NO];
+        [_menuButton setTintColor:[UIColor blackColor]];
         [self.homeNavgationBar addSubview:_menuButton];
     }
     return _menuButton;
+}
+
+- (void)setCurrentDate:(NSDate *)currentDate {
+    _currentDate = currentDate;
+    NSString *dateString = [NSDate converDate:_currentDate toStringWithFormatter:@"yyyy-MM-dd"];
+    NSArray *dateArray = [dateString componentsSeparatedByString:@"-"];
+    self.year = [dateArray[0] integerValue];
+    self.month = [dateArray[1] integerValue];
+    self.day = [dateArray[2] integerValue];
+    [self updateUIElements];
 }
 
 #pragma mark - Lifecycle
@@ -54,6 +70,8 @@ static NSString *weatherIdentifer = @"weather";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.currentDate = [NSDate date];
     
     [[self.menuButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(VBFPopFlatButton *sender) {
         if (sender.currentButtonType == buttonAddType) {
@@ -66,31 +84,101 @@ static NSString *weatherIdentifer = @"weather";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    NSArray *cArray = [[CTools sharedCTools] currentDay];
-    self.year = [cArray.firstObject integerValue];
-    self.month = [cArray[1] integerValue];
-    self.day = [cArray[2] integerValue];
-    
-    if (!_cwModel)
-        _cwModel = [CWeatherModel new];
-    [_cwModel updateWeatherWithYear:self.year inMonth:self.month atDay:self.day];
-    
-    CMonthView *monthView = [CMonthView loadInstanceFromNib];
-    [self.view addSubview:monthView];
-    monthView.delegate = self;
-    self.monthView = monthView;
-    
-    [self updateUIElements];
+    [self wave];
 }
 
-- (void)updateUIElements
-{
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    self.navigationController.navigationBarHidden = YES;
+    
+    /*
+     *CADisplayLink是一个能让我们以和屏幕刷新率相同的频率将内容画到屏幕上的定时器。我们在应用中创建一个新的 CADisplayLink 对象，把它添加到一个runloop中，并给它提供一个 target 和selector 在屏幕刷新的时候调用。
+     */
+    self.waveDisplayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(getCurrentWave)];
+    [self.waveDisplayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self.waveDisplayLink invalidate];
+    self.waveDisplayLink = nil;
+}
+
+#pragma mark - private
+
+- (void)updateUIElements {
     [self.yearMonthBtn setTitle:[NSString stringWithFormat:@"%lu年%lu月",self.year,self.month] forState:UIControlStateNormal];
-    [self.monthView updateUIElementsWithYear:self.year atMonth:self.month atDay:self.day];
 }
 
-- (IBAction)yearMonthAction:(UIButton *)sender
-{
+- (void)wave {
+    /*
+     *创建两个layer
+     */
+    
+    self.offsetX =
+    self.offsetXT= 80;
+    self.waveSpeed = 0.2; // 水波速度
+    self.waveWidth = kScrWidth; // 水波长度（直线）
+    self.waveHeight = 75; // x轴
+    self.waveAmplitude = 15; // 振幅
+    
+    self.waveShapeLayer = [CAShapeLayer layer];
+    self.waveShapeLayer.fillColor = [UIColor colorWithHex:0x2A00FD alpha:0.4].CGColor;
+    [self.waterWaveView.layer addSublayer:self.waveShapeLayer];
+    
+    self.waveShapeLayerT = [CAShapeLayer layer];
+    self.waveShapeLayerT.fillColor = [UIColor colorWithHex:0x2A00FD alpha:0.2].CGColor;
+    [self.waterWaveView.layer addSublayer:self.waveShapeLayerT];
+}
+
+#pragma mark - Actions
+
+//CADispayLink相当于一个定时器 会一直绘制曲线波纹 看似在运动，其实是一直在绘画不同位置点的余弦函数曲线
+- (void)getCurrentWave {
+    //offsetX决定x位置，如果想搞明白可以多试几次
+    self.offsetX += self.waveSpeed;
+    //声明第一条波曲线的路径
+    CGMutablePathRef path = CGPathCreateMutable();
+    //设置起始点
+    CGPathMoveToPoint(path, nil, 0, self.waveHeight);
+    
+    CGFloat y = 0.f;
+    //第一个波纹的公式
+    for (float x = 0.f; x <= self.waveWidth ; x++) {
+        y = self.waveAmplitude * sin((300 / self.waveWidth) * (x * M_PI / 180) - self.offsetX * M_PI / 270) + self.waveHeight*1;
+        CGPathAddLineToPoint(path, nil, x, y);
+        x++;
+    }
+    //把绘图信息添加到路径里
+    CGPathAddLineToPoint(path, nil, self.waveWidth, CGRectGetHeight(self.waterWaveView.frame));
+    CGPathAddLineToPoint(path, nil, 0, CGRectGetHeight(self.waterWaveView.frame));
+    //结束绘图信息
+    CGPathCloseSubpath(path);
+    
+    self.waveShapeLayer.path = path;
+    //释放绘图路径
+    CGPathRelease(path);
+    
+    /*
+     *  第二个
+     */
+    self.offsetXT += self.waveSpeed;
+    CGMutablePathRef pathT = CGPathCreateMutable();
+    CGPathMoveToPoint(pathT, nil, 0, self.waveHeight+100);
+    
+    CGFloat yT = 0.f;
+    for (float x = 0.f; x <= self.waveWidth ; x++) {
+        yT = self.waveAmplitude*1.6 * sin((260 / self.waveWidth) * (x * M_PI / 180) - self.offsetXT * M_PI / 180) + self.waveHeight;
+        CGPathAddLineToPoint(pathT, nil, x, yT-10);
+    }
+    CGPathAddLineToPoint(pathT, nil, self.waveWidth, CGRectGetHeight(self.waterWaveView.frame));
+    CGPathAddLineToPoint(pathT, nil, 0, CGRectGetHeight(self.waterWaveView.frame));
+    CGPathCloseSubpath(pathT);
+    self.waveShapeLayerT.path = pathT;
+    CGPathRelease(pathT);
+}
+
+- (IBAction)yearMonthAction:(UIButton *)sender {
     CDatePickerView *pickerView = [CDatePickerView loadInstanceFromNibWithSelectedBlock:^(NSDate *date) {
         NSString *fmt = [date convertToStringWithFormatter:@"yyyy/MM/dd"];
         NSArray *fmtArray = [fmt componentsSeparatedByString:@"/"];
@@ -99,44 +187,25 @@ static NSString *weatherIdentifer = @"weather";
         self.month = [fmtArray[1] integerValue];
         self.day = [fmtArray[2] integerValue];
         
-        [self cmonthView:self.monthView didItemSelected:fmtArray[2] withTouchCount:1];
-        
         [self updateUIElements];
     }];
     pickerView.type = CDatePickerTypeDate;
     [pickerView showDatePickerView];
 }
 
-#pragma mark - CMonthViewDelegate
-
-- (void)cmonthView:(CMonthView *)aView didLayoutSubview:(CGRect)rect
-{
-    self.monthView.frame = CGRectMake(0, 64, kScrWidth, rect.size.height);
-    self.topConstriant.constant = rect.size.height;
-}
-
-- (void)cmonthView:(CMonthView *)aView didItemSelected:(NSString *)dayString withTouchCount:(NSInteger)count
-{
-    if (count == 1) {
-        [_cwModel updateWeatherWithYear:self.year inMonth:self.month atDay:[dayString integerValue]];
-    }
-}
-
 #pragma mark - Segue
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"presentNew"]) {
-        UINavigationController *vc = segue.destinationViewController;
-        vc.viewControllers.firstObject.title = [NSString stringWithFormat:@"%ld-%ld-%@",self.year,self.month,_cwModel.day];
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"addNew"]) {
+        CNAddViewController *vc = segue.destinationViewController;
+        vc.dateArray = @[@(self.year),@(self.month),@(self.day)];
     }
 }
 
 #pragma mark - CWeatherCellDelegate
 
-- (void)cweatherCellAddBtnDidTouchupInside:(UIButton *)sender
-{
-    [self performSegueWithIdentifier:@"presentNew" sender:nil];
+- (void)cweatherCellAddBtnDidTouchupInside:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"addNew" sender:nil];
 }
 
 #pragma mark - UITableViewDelegate
@@ -154,27 +223,19 @@ static NSString *weatherIdentifer = @"weather";
     }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 104;
-}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath { return 104; }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 10;
-}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section { return 10; }
 
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CWeatherCell *cell = [tableView dequeueReusableCellWithIdentifier:weatherIdentifer forIndexPath:indexPath];
-    cell.cwModel = self.cwModel;
+    cell.date = self.currentDate;
     cell.delegate = self;
     return cell;
 }

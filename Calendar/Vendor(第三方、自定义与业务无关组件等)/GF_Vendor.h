@@ -12,6 +12,5 @@
 #import "GFEffectView.h"
 #import "GFRegularExp.h"
 #import "GFModel.h"
-#import "GFTextView.h"
 
 #endif /* GF_Vendor_h */

@@ -7,6 +7,7 @@
 //
 
 #import "CWeatherCell.h"
+#import "CTools.h"
 
 @implementation CWeatherCell
 
@@ -22,13 +23,15 @@
     self.mainView.layer.shadowOffset = CGSizeZero;
     
     // 绑定值
-    RAC(self.dayLabel,text) = RACObserve(self, cwModel.day);
-    RAC(self.lunarLabel,text) = RACObserve(self, cwModel.called);
-    RAC(self.thingLabel,text) = RACObserve(self, cwModel.thing);
-    RAC(self.weatherLabel,text) = RACObserve(self, cwModel.weather);
-    RAC(self.typeLabel,text) = RACObserve(self, cwModel.type);
-    RAC(self.weatherImageView,image) = [RACObserve(self, cwModel.imageName) map:^id(NSString *value) {
-        return [UIImage imageNamed:value];
+    [RACObserve(self, date) subscribeNext:^(NSDate *date) {
+        NSString *dateString = [NSDate converDate:date toStringWithFormatter:@"yyyy-MM-dd"];
+        NSArray *dateArray = [dateString componentsSeparatedByString:@"-"];
+        self.dayLabel.text = [NSString stringWithFormat:@"%@",dateArray[2]];
+        self.lunarLabel.text = [[CTools sharedCTools] getCalledAtYear:[dateArray[0] integerValue] inMonth:[dateArray[1] integerValue] inDay:[dateArray[2] integerValue]];
+        self.thingLabel.text = @"今日总共盈亏：￥500.00";
+        self.weatherLabel.text = @"晴";
+        self.typeLabel.text = @"重度污染";
+        self.weatherImageView.image = [UIImage imageNamed:weatherTypeString().firstObject];
     }];
     
     // 事件回调
@@ -38,7 +41,13 @@
         if (self.delegate && [self.delegate respondsToSelector:@selector(cweatherCellAddBtnDidTouchupInside:)])
             [self.delegate cweatherCellAddBtnDidTouchupInside:x];
     }];
-    
+}
+
+- (NSDate *)date {
+    if (!_date) {
+        _date = [NSDate date];
+    }
+    return _date;
 }
 
 @end

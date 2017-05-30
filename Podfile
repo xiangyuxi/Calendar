@@ -5,7 +5,9 @@ target “Calendar” do
  	pod 'ReactiveCocoa'
 	pod 'FMDB'
 	pod 'MJExtension'
+    pod 'IQKeyboardManager'
     pod 'JVFloatLabeledTextField'
     pod 'pop'
     pod 'VBFPopFlatButton'
+    pod 'YBPopupMenu'
 end

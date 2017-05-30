@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CWeatherModel.h"
 
 @protocol CWeatherCellDelegate <NSObject>
 
@@ -17,6 +16,8 @@
 @end
 
 @interface CWeatherCell : UITableViewCell
+
+@property (copy, nonatomic) NSDate *date;
 
 @property (weak, nonatomic) IBOutlet UILabel *dayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lunarLabel;
@@ -28,7 +29,5 @@
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 
 @property (weak, nonatomic) id<CWeatherCellDelegate> delegate;
-
-@property (strong, nonatomic) CWeatherModel *cwModel;
 
 @end
