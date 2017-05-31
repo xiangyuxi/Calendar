@@ -15,11 +15,20 @@ static NSString *weatherIdentifer = @"weather";
 
 @interface CHViewController () <UITableViewDelegate, UITableViewDataSource, CWeatherCellDelegate>
 
+#pragma mark - IBOutlet
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *yearMonthBtn;
 @property (weak, nonatomic) IBOutlet UIView *homeNavgationBar;
 @property (weak, nonatomic) IBOutlet UIView *waterWaveView;
 @property (weak, nonatomic) IBOutlet UILabel *staticLabel;
+@property (weak, nonatomic) IBOutlet UICountingLabel *countingLabel;
+@property (weak, nonatomic) IBOutlet UIView *payView;
+@property (weak, nonatomic) IBOutlet UILabel *payLabel;
+@property (weak, nonatomic) IBOutlet UIView *incomeView;
+@property (weak, nonatomic) IBOutlet UILabel *incomeLabel;
+
+#pragma mark - Water wave
 
 @property (assign, nonatomic) CGFloat waveHeight;
 @property (assign, nonatomic) CGFloat waveWidth;
@@ -31,33 +40,22 @@ static NSString *weatherIdentifer = @"weather";
 @property (assign, nonatomic) CGFloat offsetXT;
 @property (strong, nonatomic) CADisplayLink *waveDisplayLink;
 
+#pragma mark - Navigation item
+
 @property (copy, nonatomic) VBFPopFlatButton *menuButton;
+
+#pragma mark - Date
 
 @property (copy, nonatomic) NSDate *currentDate;
 @property (assign, nonatomic) NSInteger year;
 @property (assign, nonatomic) NSInteger month;
 @property (assign, nonatomic) NSInteger day;
 
-@property (copy, nonatomic) UICountingLabel *countingLabel;
-
 @end
 
 @implementation CHViewController
 
 #pragma mark - Properties
-
-- (UICountingLabel *)countingLabel {
-    if (!_countingLabel) {
-        _countingLabel = [[UICountingLabel alloc] initWithFrame:CGRectMake(0, 30, kScrWidth, 50)];
-        _countingLabel.font = [UIFont boldSystemFontOfSize:40];
-        _countingLabel.textAlignment = NSTextAlignmentCenter;
-        _countingLabel.textColor = [UIColor colorWithHex:0x3DA1FF];
-        _countingLabel.format = @"%.2f";
-        _countingLabel.positiveFormat = @"###,##0.00";
-        [self.waterWaveView addSubview:_countingLabel];
-    }
-    return _countingLabel;
-}
 
 - (VBFPopFlatButton *)menuButton {
     if (!_menuButton) {
@@ -87,7 +85,9 @@ static NSString *weatherIdentifer = @"weather";
 {
     [super viewDidLoad];
     
-    self.countingLabel.text = @"0.00";
+    self.countingLabel.format = @"%.2f";
+    self.countingLabel.positiveFormat = @"###,##0.00";
+    self.countingLabel.method = UILabelCountingMethodEaseInOut;
     
     self.currentDate = [NSDate date];
     
@@ -103,6 +103,10 @@ static NSString *weatherIdentifer = @"weather";
     self.tableView.dataSource = self;
     
     [self wave];
+    
+    [self bringViewToFront];
+    
+    [self makeCornerRadius];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -110,7 +114,8 @@ static NSString *weatherIdentifer = @"weather";
     self.navigationController.navigationBarHidden = YES;
     
     /*
-     *CADisplayLink是一个能让我们以和屏幕刷新率相同的频率将内容画到屏幕上的定时器。我们在应用中创建一个新的 CADisplayLink 对象，把它添加到一个runloop中，并给它提供一个 target 和selector 在屏幕刷新的时候调用。
+     * CADisplayLink是一个能让我们以和屏幕刷新率相同的频率将内容画到屏幕上的定时器。我们在应用中创建一个新的
+     * CADisplayLink 对象，把它添加到一个runloop中，并给它提供一个 target 和selector 在屏幕刷新的时候调用。
      */
     self.waveDisplayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(getCurrentWave)];
     [self.waveDisplayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
@@ -118,7 +123,7 @@ static NSString *weatherIdentifer = @"weather";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.countingLabel countFromCurrentValueTo:-3048.64];
+    [self.countingLabel countFromCurrentValueTo:99999.64];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -133,11 +138,33 @@ static NSString *weatherIdentifer = @"weather";
     [self.yearMonthBtn setTitle:[NSString stringWithFormat:@"%lu年%lu月",self.year,self.month] forState:UIControlStateNormal];
 }
 
+- (void)bringViewToFront {
+    [self.waterWaveView bringSubviewToFront:self.countingLabel];
+    [self.waterWaveView bringSubviewToFront:self.staticLabel];
+    [self.waterWaveView bringSubviewToFront:self.payView];
+    [self.waterWaveView bringSubviewToFront:self.incomeView];
+}
+
+- (void)makeCornerRadius {
+    UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, 85, 44)
+                                                  byRoundingCorners:UIRectCornerTopRight | UIRectCornerBottomRight
+                                                        cornerRadii:CGSizeMake(22, 22)];
+    CAShapeLayer* shape = [[CAShapeLayer alloc] init];
+    [shape setPath:rounded.CGPath];
+    self.payView.layer.mask = shape;
+    
+    rounded = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, 85, 44)
+                                    byRoundingCorners:UIRectCornerTopLeft | UIRectCornerBottomLeft
+                                          cornerRadii:CGSizeMake(22, 22)];
+    shape = [[CAShapeLayer alloc] init];
+    [shape setPath:rounded.CGPath];
+    self.incomeView.layer.mask = shape;
+}
+
 - (void)wave {
     /*
      *创建两个layer
      */
-    
     self.offsetX =
     self.offsetXT= 80;
     self.waveSpeed = 0.5; // 水波速度
@@ -152,9 +179,6 @@ static NSString *weatherIdentifer = @"weather";
     self.waveShapeLayerT = [CAShapeLayer layer];
     self.waveShapeLayerT.fillColor = [UIColor colorWithRed:201/255.0 green:228/255.0 blue:1 alpha:0.6].CGColor;
     [self.waterWaveView.layer addSublayer:self.waveShapeLayerT];
-    
-    [self.waterWaveView bringSubviewToFront:self.countingLabel];
-    [self.waterWaveView bringSubviewToFront:self.staticLabel];
 }
 
 #pragma mark - Actions

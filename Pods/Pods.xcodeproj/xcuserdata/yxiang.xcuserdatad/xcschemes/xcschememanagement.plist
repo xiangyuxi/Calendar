@@ -18,6 +18,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>IQKeyboardManager.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>JVFloatLabeledTextField.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -44,10 +49,20 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>UICountingLabel.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
 		<key>VBFPopFlatButton.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>8</integer>
+		</dict>
+		<key>YBPopupMenu.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
 		</dict>
 		<key>pop.xcscheme</key>
 		<dict>
@@ -57,6 +72,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0659B71386995AC7EE2A305F0A360EB1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0CC384B042D9FCEA45382F7E0303182A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2FA9466C248DC2873FAC8441433DDB49</key>
 		<dict>
 			<key>primary</key>
@@ -67,12 +92,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>479F7A434D7FB9B5E5447F2E49B70954</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>57A3802A701AE49C7C21CBD1BD2B8B71</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>6A07203DBBB21A9BCFD5692E510C25D1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7898FD3B3576617620BB3BFD1DDA9416</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7C3169A556B27DD51CE970DA5118CE98</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -98,6 +138,16 @@
 			<true/>
 		</dict>
 		<key>A316B54C67E947D23CECD230FA5BFAEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CEC5103FBE3DCCCBCE47FDB5245419E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D91C4A055C428689FB7878DD3F19BE50</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dN6-Th-Pmz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dN6-Th-Pmz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,11 +27,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5u-wT-twx">
-                                        <rect key="frame" x="141" y="25" width="93" height="33"/>
+                                        <rect key="frame" x="144" y="25" width="87" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="33" id="JrG-8R-KZW"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                         <state key="normal" title="2015年5月">
                                             <color key="titleColor" red="0.23921568627450979" green="0.63137254901960782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -40,7 +40,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="O6X-U4-vJM"/>
                                     <constraint firstItem="Q5u-wT-twx" firstAttribute="centerX" secondItem="bvh-BU-HHr" secondAttribute="centerX" id="jwt-Ry-B7H"/>
@@ -68,7 +68,7 @@
                                                         <constraint firstAttribute="width" constant="60" id="SxA-Rk-kZj"/>
                                                         <constraint firstAttribute="width" secondItem="2BM-yC-igU" secondAttribute="height" id="onO-Ap-r0f"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="40"/>
                                                     <color key="textColor" red="0.23921568630000001" green="0.63137254899999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -163,17 +163,100 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本月总盈亏（元）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSg-Dq-kRQ">
-                                        <rect key="frame" x="140.5" y="84" width="106.5" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <rect key="frame" x="142" y="85" width="104" height="15"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                         <color key="textColor" red="0.23921568630000001" green="0.63137254899999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="Zz0-8J-ZmT" customClass="UICountingLabel">
+                                        <rect key="frame" x="100" y="22" width="175" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="oQJ-dX-TXD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="40"/>
+                                        <color key="textColor" red="0.23921568630000001" green="0.63137254899999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lL-uo-bVs">
+                                        <rect key="frame" x="290" y="23" width="85" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本月收入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBh-Gh-CZj">
+                                                <rect key="frame" x="23.5" y="5" width="48" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="16" id="jjK-eH-uSh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ee1-4o-aR6">
+                                                <rect key="frame" x="15" y="23" width="65" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="16" id="MkP-XP-YD1"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.55686274509803924" green="0.92941176470588238" blue="0.50980392156862742" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Ee1-4o-aR6" firstAttribute="leading" secondItem="3lL-uo-bVs" secondAttribute="leading" constant="15" id="3B9-Yj-DlW"/>
+                                            <constraint firstItem="TBh-Gh-CZj" firstAttribute="centerX" secondItem="3lL-uo-bVs" secondAttribute="centerX" constant="5" id="4Zf-pi-o6E"/>
+                                            <constraint firstItem="TBh-Gh-CZj" firstAttribute="top" secondItem="3lL-uo-bVs" secondAttribute="top" constant="5" id="6qN-Mm-hi1"/>
+                                            <constraint firstItem="Ee1-4o-aR6" firstAttribute="top" secondItem="TBh-Gh-CZj" secondAttribute="bottom" constant="2" id="f4A-y1-1LQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ee1-4o-aR6" secondAttribute="trailing" constant="5" id="odg-UM-2QZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ee1-4o-aR6" secondAttribute="bottom" constant="5" id="wMI-8n-51I"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="waC-Tq-3jl">
+                                        <rect key="frame" x="0.0" y="23" width="85" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本月开支" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swm-EI-YLp">
+                                                <rect key="frame" x="13.5" y="5" width="48" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="16" id="zdD-hz-ock"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="lf0-bM-Bg8">
+                                                <rect key="frame" x="5" y="23" width="65" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="16" id="guG-jQ-lkr"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.97254901960784312" green="0.31372549019607843" blue="0.19215686274509802" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="lf0-bM-Bg8" secondAttribute="bottom" constant="5" id="GI6-Xb-zfc"/>
+                                            <constraint firstItem="lf0-bM-Bg8" firstAttribute="top" secondItem="swm-EI-YLp" secondAttribute="bottom" constant="2" id="O3T-o9-tBW"/>
+                                            <constraint firstItem="lf0-bM-Bg8" firstAttribute="leading" secondItem="waC-Tq-3jl" secondAttribute="leading" constant="5" id="gks-9u-Ah1"/>
+                                            <constraint firstItem="swm-EI-YLp" firstAttribute="top" secondItem="waC-Tq-3jl" secondAttribute="top" constant="5" id="oRe-Gg-PfF"/>
+                                            <constraint firstItem="swm-EI-YLp" firstAttribute="centerX" secondItem="waC-Tq-3jl" secondAttribute="centerX" constant="-5" id="yNi-c8-LVc"/>
+                                            <constraint firstAttribute="trailing" secondItem="lf0-bM-Bg8" secondAttribute="trailing" constant="15" id="zfD-xQ-ajZ"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="1Ed-s1-gkd"/>
+                                    <constraint firstItem="waC-Tq-3jl" firstAttribute="centerY" secondItem="Zz0-8J-ZmT" secondAttribute="centerY" id="2La-U5-7VY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zz0-8J-ZmT" secondAttribute="trailing" constant="100" id="FGv-vx-JrG"/>
+                                    <constraint firstItem="Zz0-8J-ZmT" firstAttribute="leading" secondItem="9dD-pR-kFD" secondAttribute="leading" constant="100" id="PwB-gd-rgV"/>
+                                    <constraint firstAttribute="trailing" secondItem="3lL-uo-bVs" secondAttribute="trailing" id="V0Y-qZ-5jz"/>
+                                    <constraint firstItem="waC-Tq-3jl" firstAttribute="leading" secondItem="9dD-pR-kFD" secondAttribute="leading" id="dXT-nn-kQe"/>
                                     <constraint firstItem="vSg-Dq-kRQ" firstAttribute="centerX" secondItem="9dD-pR-kFD" secondAttribute="centerX" constant="6" id="fzu-2i-kht"/>
+                                    <constraint firstItem="3lL-uo-bVs" firstAttribute="centerY" secondItem="Zz0-8J-ZmT" secondAttribute="centerY" id="i63-4p-P0r"/>
+                                    <constraint firstItem="Zz0-8J-ZmT" firstAttribute="centerX" secondItem="9dD-pR-kFD" secondAttribute="centerX" id="m4j-uM-PAR"/>
+                                    <constraint firstItem="Zz0-8J-ZmT" firstAttribute="leading" secondItem="waC-Tq-3jl" secondAttribute="trailing" constant="15" id="nIQ-q1-LuL"/>
+                                    <constraint firstItem="3lL-uo-bVs" firstAttribute="leading" secondItem="Zz0-8J-ZmT" secondAttribute="trailing" constant="15" id="oAx-VW-bFf"/>
                                     <constraint firstAttribute="bottom" secondItem="vSg-Dq-kRQ" secondAttribute="bottom" constant="20" id="p8y-H5-Oym"/>
+                                    <constraint firstItem="Zz0-8J-ZmT" firstAttribute="centerY" secondItem="9dD-pR-kFD" secondAttribute="centerY" constant="-15" id="qWx-CO-GG3"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -193,7 +276,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="BkW-Qy-L0b"/>
                     <connections>
+                        <outlet property="countingLabel" destination="Zz0-8J-ZmT" id="dXF-2e-0D1"/>
                         <outlet property="homeNavgationBar" destination="bvh-BU-HHr" id="KL6-Mv-F8T"/>
+                        <outlet property="incomeLabel" destination="Ee1-4o-aR6" id="o4B-By-fTA"/>
+                        <outlet property="incomeView" destination="3lL-uo-bVs" id="fty-9d-uHs"/>
+                        <outlet property="payLabel" destination="lf0-bM-Bg8" id="SnC-AD-NRT"/>
+                        <outlet property="payView" destination="waC-Tq-3jl" id="82Y-bM-bei"/>
                         <outlet property="staticLabel" destination="vSg-Dq-kRQ" id="Ou4-rE-iel"/>
                         <outlet property="tableView" destination="qhy-0u-o9c" id="ld8-A0-1wA"/>
                         <outlet property="waterWaveView" destination="9dD-pR-kFD" id="aDQ-nI-84V"/>
@@ -203,7 +291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1943" y="824"/>
+            <point key="canvasLocation" x="1941.5999999999999" y="823.53823088455783"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="FLf-mO-uf7">
