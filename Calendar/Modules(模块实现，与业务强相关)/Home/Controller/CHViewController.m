@@ -25,8 +25,8 @@ static NSString *weatherIdentifer = @"weather";
 @property (weak, nonatomic) IBOutlet UICountingLabel *countingLabel;
 @property (weak, nonatomic) IBOutlet UIView *payView;
 @property (weak, nonatomic) IBOutlet UILabel *payLabel;
-@property (weak, nonatomic) IBOutlet UIView *incomeView;
-@property (weak, nonatomic) IBOutlet UILabel *incomeLabel;
+@property (weak, nonatomic) IBOutlet UICountingLabel *incomeView;
+@property (weak, nonatomic) IBOutlet UICountingLabel *incomeLabel;
 
 #pragma mark - Water wave
 
@@ -146,16 +146,16 @@ static NSString *weatherIdentifer = @"weather";
 }
 
 - (void)makeCornerRadius {
-    UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, 85, 44)
+    UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, 75, 32)
                                                   byRoundingCorners:UIRectCornerTopRight | UIRectCornerBottomRight
-                                                        cornerRadii:CGSizeMake(22, 22)];
+                                                        cornerRadii:CGSizeMake(16, 16)];
     CAShapeLayer* shape = [[CAShapeLayer alloc] init];
     [shape setPath:rounded.CGPath];
     self.payView.layer.mask = shape;
     
-    rounded = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, 85, 44)
+    rounded = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, 75, 32)
                                     byRoundingCorners:UIRectCornerTopLeft | UIRectCornerBottomLeft
-                                          cornerRadii:CGSizeMake(22, 22)];
+                                          cornerRadii:CGSizeMake(16, 16)];
     shape = [[CAShapeLayer alloc] init];
     [shape setPath:rounded.CGPath];
     self.incomeView.layer.mask = shape;
@@ -173,11 +173,11 @@ static NSString *weatherIdentifer = @"weather";
     self.waveAmplitude = 8; // 振幅
     
     self.waveShapeLayer = [CAShapeLayer layer];
-    self.waveShapeLayer.fillColor = [UIColor colorWithRed:157/255.0 green:206/255.0 blue:1 alpha:0.6].CGColor;
+    self.waveShapeLayer.fillColor = [UIColor colorWithRed:157/255.0 green:206/255.0 blue:1 alpha:0.7].CGColor;
     [self.waterWaveView.layer addSublayer:self.waveShapeLayer];
     
     self.waveShapeLayerT = [CAShapeLayer layer];
-    self.waveShapeLayerT.fillColor = [UIColor colorWithRed:201/255.0 green:228/255.0 blue:1 alpha:0.6].CGColor;
+    self.waveShapeLayerT.fillColor = [UIColor colorWithRed:201/255.0 green:228/255.0 blue:1 alpha:0.7].CGColor;
     [self.waterWaveView.layer addSublayer:self.waveShapeLayerT];
 }
 

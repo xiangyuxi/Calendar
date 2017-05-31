@@ -173,70 +173,70 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="oQJ-dX-TXD"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="40"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="35"/>
                                         <color key="textColor" red="0.23921568630000001" green="0.63137254899999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lL-uo-bVs">
-                                        <rect key="frame" x="290" y="23" width="85" height="44"/>
+                                        <rect key="frame" x="300" y="29" width="75" height="32"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本月收入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBh-Gh-CZj">
-                                                <rect key="frame" x="23.5" y="5" width="48" height="16"/>
+                                                <rect key="frame" x="22.5" y="2" width="40" height="12"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="16" id="jjK-eH-uSh"/>
+                                                    <constraint firstAttribute="height" constant="12" id="jjK-eH-uSh"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ee1-4o-aR6">
-                                                <rect key="frame" x="15" y="23" width="65" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ee1-4o-aR6" customClass="UICountingLabel">
+                                                <rect key="frame" x="15" y="16" width="55" height="14"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="16" id="MkP-XP-YD1"/>
+                                                    <constraint firstAttribute="height" constant="14" id="MkP-XP-YD1"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="13"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.55686274509803924" green="0.92941176470588238" blue="0.50980392156862742" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.66715494791666663" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="Ee1-4o-aR6" firstAttribute="leading" secondItem="3lL-uo-bVs" secondAttribute="leading" constant="15" id="3B9-Yj-DlW"/>
                                             <constraint firstItem="TBh-Gh-CZj" firstAttribute="centerX" secondItem="3lL-uo-bVs" secondAttribute="centerX" constant="5" id="4Zf-pi-o6E"/>
-                                            <constraint firstItem="TBh-Gh-CZj" firstAttribute="top" secondItem="3lL-uo-bVs" secondAttribute="top" constant="5" id="6qN-Mm-hi1"/>
+                                            <constraint firstItem="TBh-Gh-CZj" firstAttribute="top" secondItem="3lL-uo-bVs" secondAttribute="top" constant="2" id="6qN-Mm-hi1"/>
                                             <constraint firstItem="Ee1-4o-aR6" firstAttribute="top" secondItem="TBh-Gh-CZj" secondAttribute="bottom" constant="2" id="f4A-y1-1LQ"/>
                                             <constraint firstAttribute="trailing" secondItem="Ee1-4o-aR6" secondAttribute="trailing" constant="5" id="odg-UM-2QZ"/>
-                                            <constraint firstAttribute="bottom" secondItem="Ee1-4o-aR6" secondAttribute="bottom" constant="5" id="wMI-8n-51I"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ee1-4o-aR6" secondAttribute="bottom" constant="2" id="wMI-8n-51I"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="waC-Tq-3jl">
-                                        <rect key="frame" x="0.0" y="23" width="85" height="44"/>
+                                        <rect key="frame" x="0.0" y="29" width="75" height="32"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本月开支" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swm-EI-YLp">
-                                                <rect key="frame" x="13.5" y="5" width="48" height="16"/>
+                                                <rect key="frame" x="12.5" y="2" width="40" height="12"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="16" id="zdD-hz-ock"/>
+                                                    <constraint firstAttribute="height" constant="12" id="zdD-hz-ock"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="lf0-bM-Bg8">
-                                                <rect key="frame" x="5" y="23" width="65" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="lf0-bM-Bg8" customClass="UICountingLabel">
+                                                <rect key="frame" x="5" y="16" width="55" height="14"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="16" id="guG-jQ-lkr"/>
+                                                    <constraint firstAttribute="height" constant="14" id="guG-jQ-lkr"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="13"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.97254901960784312" green="0.31372549019607843" blue="0.19215686274509802" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.88959418402777779" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="lf0-bM-Bg8" secondAttribute="bottom" constant="5" id="GI6-Xb-zfc"/>
+                                            <constraint firstAttribute="bottom" secondItem="lf0-bM-Bg8" secondAttribute="bottom" constant="2" id="GI6-Xb-zfc"/>
                                             <constraint firstItem="lf0-bM-Bg8" firstAttribute="top" secondItem="swm-EI-YLp" secondAttribute="bottom" constant="2" id="O3T-o9-tBW"/>
                                             <constraint firstItem="lf0-bM-Bg8" firstAttribute="leading" secondItem="waC-Tq-3jl" secondAttribute="leading" constant="5" id="gks-9u-Ah1"/>
-                                            <constraint firstItem="swm-EI-YLp" firstAttribute="top" secondItem="waC-Tq-3jl" secondAttribute="top" constant="5" id="oRe-Gg-PfF"/>
+                                            <constraint firstItem="swm-EI-YLp" firstAttribute="top" secondItem="waC-Tq-3jl" secondAttribute="top" constant="2" id="oRe-Gg-PfF"/>
                                             <constraint firstItem="swm-EI-YLp" firstAttribute="centerX" secondItem="waC-Tq-3jl" secondAttribute="centerX" constant="-5" id="yNi-c8-LVc"/>
                                             <constraint firstAttribute="trailing" secondItem="lf0-bM-Bg8" secondAttribute="trailing" constant="15" id="zfD-xQ-ajZ"/>
                                         </constraints>
@@ -253,8 +253,8 @@
                                     <constraint firstItem="vSg-Dq-kRQ" firstAttribute="centerX" secondItem="9dD-pR-kFD" secondAttribute="centerX" constant="6" id="fzu-2i-kht"/>
                                     <constraint firstItem="3lL-uo-bVs" firstAttribute="centerY" secondItem="Zz0-8J-ZmT" secondAttribute="centerY" id="i63-4p-P0r"/>
                                     <constraint firstItem="Zz0-8J-ZmT" firstAttribute="centerX" secondItem="9dD-pR-kFD" secondAttribute="centerX" id="m4j-uM-PAR"/>
-                                    <constraint firstItem="Zz0-8J-ZmT" firstAttribute="leading" secondItem="waC-Tq-3jl" secondAttribute="trailing" constant="15" id="nIQ-q1-LuL"/>
-                                    <constraint firstItem="3lL-uo-bVs" firstAttribute="leading" secondItem="Zz0-8J-ZmT" secondAttribute="trailing" constant="15" id="oAx-VW-bFf"/>
+                                    <constraint firstItem="Zz0-8J-ZmT" firstAttribute="leading" secondItem="waC-Tq-3jl" secondAttribute="trailing" constant="25" id="nIQ-q1-LuL"/>
+                                    <constraint firstItem="3lL-uo-bVs" firstAttribute="leading" secondItem="Zz0-8J-ZmT" secondAttribute="trailing" constant="25" id="oAx-VW-bFf"/>
                                     <constraint firstAttribute="bottom" secondItem="vSg-Dq-kRQ" secondAttribute="bottom" constant="20" id="p8y-H5-Oym"/>
                                     <constraint firstItem="Zz0-8J-ZmT" firstAttribute="centerY" secondItem="9dD-pR-kFD" secondAttribute="centerY" constant="-15" id="qWx-CO-GG3"/>
                                 </constraints>
