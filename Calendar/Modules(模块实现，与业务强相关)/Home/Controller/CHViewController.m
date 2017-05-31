@@ -7,13 +7,10 @@
 //
 
 #import "CHViewController.h"
-#import "CWeatherCell.h"
 #import "CDatePickerView.h"
 #import "CNAddViewController.h"
 
-static NSString *weatherIdentifer = @"weather";
-
-@interface CHViewController () <UITableViewDelegate, UITableViewDataSource, CWeatherCellDelegate>
+@interface CHViewController () <UITableViewDelegate, UITableViewDataSource>
 
 #pragma mark - IBOutlet
 
@@ -24,8 +21,8 @@ static NSString *weatherIdentifer = @"weather";
 @property (weak, nonatomic) IBOutlet UILabel *staticLabel;
 @property (weak, nonatomic) IBOutlet UICountingLabel *countingLabel;
 @property (weak, nonatomic) IBOutlet UIView *payView;
-@property (weak, nonatomic) IBOutlet UILabel *payLabel;
-@property (weak, nonatomic) IBOutlet UICountingLabel *incomeView;
+@property (weak, nonatomic) IBOutlet UICountingLabel *payLabel;
+@property (weak, nonatomic) IBOutlet UIView *incomeView;
 @property (weak, nonatomic) IBOutlet UICountingLabel *incomeLabel;
 
 #pragma mark - Water wave
@@ -51,6 +48,16 @@ static NSString *weatherIdentifer = @"weather";
 @property (assign, nonatomic) NSInteger month;
 @property (assign, nonatomic) NSInteger day;
 
+#pragma mark - Counting
+
+@property (copy, nonatomic) NSString *payString;
+@property (copy, nonatomic) NSString *incomeString;
+
+#pragma mark - Add
+
+@property (weak, nonatomic) IBOutlet UIView *addView;
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
+
 @end
 
 @implementation CHViewController
@@ -59,11 +66,11 @@ static NSString *weatherIdentifer = @"weather";
 
 - (VBFPopFlatButton *)menuButton {
     if (!_menuButton) {
-        _menuButton = [[VBFPopFlatButton alloc] initWithFrame:CGRectMake(kScrWidth-39, 30, 24, 24)
+        _menuButton = [[VBFPopFlatButton alloc] initWithFrame:CGRectMake(10, 30, 24, 24)
                                                    buttonType:buttonMenuType
                                                   buttonStyle:buttonPlainStyle
                                         animateToInitialState:NO];
-        _menuButton.tintColor = [UIColor colorWithHex:0x3DA1FF];
+        _menuButton.tintColor = [UIColor colorWithHex:0x00A6F3];
         [self.homeNavgationBar addSubview:_menuButton];
     }
     return _menuButton;
@@ -79,13 +86,31 @@ static NSString *weatherIdentifer = @"weather";
     [self updateUIElements];
 }
 
+- (void)setIncomeString:(NSString *)incomeString {
+    if (![_incomeString isEqualToString:incomeString]) {
+        _incomeString = incomeString;
+        [self updateCountingLabelText];
+    }
+}
+
+- (void)setPayString:(NSString *)payString {
+    if (![_payString isEqualToString:payString]) {
+        _payString = payString;
+        [self updateCountingLabelText];
+    }
+}
+
 #pragma mark - Lifecycle
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.payLabel.format =
+    self.incomeLabel.format =
     self.countingLabel.format = @"%.2f";
+    
+    self.payLabel.positiveFormat =
+    self.incomeLabel.positiveFormat =
     self.countingLabel.positiveFormat = @"###,##0.00";
     self.countingLabel.method = UILabelCountingMethodEaseInOut;
     
@@ -99,31 +124,30 @@ static NSString *weatherIdentifer = @"weather";
         }
     }];
     
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+//    self.tableView.delegate = self;
+//    self.tableView.dataSource = self;
     
     [self wave];
     
     [self bringViewToFront];
     
     [self makeCornerRadius];
+    
+    [self makeGradientWithinAddView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     self.navigationController.navigationBarHidden = YES;
     
-    /*
-     * CADisplayLink是一个能让我们以和屏幕刷新率相同的频率将内容画到屏幕上的定时器。我们在应用中创建一个新的
-     * CADisplayLink 对象，把它添加到一个runloop中，并给它提供一个 target 和selector 在屏幕刷新的时候调用。
-     */
     self.waveDisplayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(getCurrentWave)];
     [self.waveDisplayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.countingLabel countFromCurrentValueTo:99999.64];
+    self.payString = @"5481.56";
+    self.incomeString = @"7421.64";
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -136,6 +160,12 @@ static NSString *weatherIdentifer = @"weather";
 
 - (void)updateUIElements {
     [self.yearMonthBtn setTitle:[NSString stringWithFormat:@"%lu年%lu月",self.year,self.month] forState:UIControlStateNormal];
+}
+
+- (void)updateCountingLabelText {
+    [self.payLabel countFromCurrentValueTo:[_payString floatValue]];
+    [self.incomeLabel countFromCurrentValueTo:[_incomeString floatValue]];
+    [self.countingLabel countFromCurrentValueTo:[_incomeString floatValue]-[_payString floatValue]];
 }
 
 - (void)bringViewToFront {
@@ -167,21 +197,32 @@ static NSString *weatherIdentifer = @"weather";
      */
     self.offsetX =
     self.offsetXT= 80;
-    self.waveSpeed = 0.5; // 水波速度
+    self.waveSpeed = 2; // 水波速度
     self.waveWidth = kScrWidth; // 水波长度（直线）
     self.waveHeight = 55; // x轴
-    self.waveAmplitude = 8; // 振幅
+    self.waveAmplitude = 15; // 振幅
     
     self.waveShapeLayer = [CAShapeLayer layer];
-    self.waveShapeLayer.fillColor = [UIColor colorWithRed:157/255.0 green:206/255.0 blue:1 alpha:0.7].CGColor;
+    self.waveShapeLayer.fillColor = [[UIColor blackColor] colorWithAlphaComponent:0.1].CGColor;
     [self.waterWaveView.layer addSublayer:self.waveShapeLayer];
     
     self.waveShapeLayerT = [CAShapeLayer layer];
-    self.waveShapeLayerT.fillColor = [UIColor colorWithRed:201/255.0 green:228/255.0 blue:1 alpha:0.7].CGColor;
+    self.waveShapeLayerT.fillColor = [[UIColor blackColor] colorWithAlphaComponent:0.1].CGColor;
     [self.waterWaveView.layer addSublayer:self.waveShapeLayerT];
 }
 
+- (void)makeGradientWithinAddView {
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = self.addView.bounds;
+    gradientLayer.colors = @[(__bridge id)[UIColor colorWithHex:0xffffff alpha:0].CGColor,(__bridge id)[UIColor colorWithHex:0xffffff].CGColor];
+    [self.addView.layer insertSublayer:gradientLayer atIndex:0];
+}
+
 #pragma mark - Actions
+
+- (IBAction)addNewAction:(id)sender {
+    [self performSegueWithIdentifier:@"addNew" sender:nil];
+}
 
 //CADispayLink相当于一个定时器 会一直绘制曲线波纹 看似在运动，其实是一直在绘画不同位置点的余弦函数曲线
 - (void)getCurrentWave {
@@ -252,12 +293,7 @@ static NSString *weatherIdentifer = @"weather";
     }
 }
 
-#pragma mark - CWeatherCellDelegate
-
-- (void)cweatherCellAddBtnDidTouchupInside:(UIButton *)sender {
-    [self performSegueWithIdentifier:@"addNew" sender:nil];
-}
-
+/*
 #pragma mark - UITableViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -289,5 +325,6 @@ static NSString *weatherIdentifer = @"weather";
     cell.delegate = self;
     return cell;
 }
+ */
 
 @end

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		060273A01ED7DFC300AF3707 /* CDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0602739F1ED7DFC300AF3707 /* CDatePickerView.m */; };
 		060273A21ED7DFD500AF3707 /* CDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060273A11ED7DFD500AF3707 /* CDatePickerView.xib */; };
-		068CEE1C1EBC747400B04910 /* CWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 068CEE1B1EBC747400B04910 /* CWeatherCell.m */; };
 		068E03061EB9B2F80001754B /* CHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068E03051EB9B2F80001754B /* CHViewController.m */; };
 		0698A8A51EAF28B8005B375D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A8A41EAF28B8005B375D /* main.m */; };
 		0698A8A81EAF28B8005B375D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A8A71EAF28B8005B375D /* AppDelegate.m */; };
@@ -84,8 +83,6 @@
 		0602739E1ED7DFC300AF3707 /* CDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDatePickerView.h; sourceTree = "<group>"; };
 		0602739F1ED7DFC300AF3707 /* CDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDatePickerView.m; sourceTree = "<group>"; };
 		060273A11ED7DFD500AF3707 /* CDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDatePickerView.xib; sourceTree = "<group>"; };
-		068CEE1A1EBC747400B04910 /* CWeatherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWeatherCell.h; sourceTree = "<group>"; };
-		068CEE1B1EBC747400B04910 /* CWeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWeatherCell.m; sourceTree = "<group>"; };
 		068E03041EB9B2F80001754B /* CHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHViewController.h; sourceTree = "<group>"; };
 		068E03051EB9B2F80001754B /* CHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHViewController.m; sourceTree = "<group>"; };
 		0698A8A01EAF28B8005B375D /* Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -297,8 +294,6 @@
 		068E03031EB9B2DF0001754B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				068CEE1A1EBC747400B04910 /* CWeatherCell.h */,
-				068CEE1B1EBC747400B04910 /* CWeatherCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -891,7 +886,6 @@
 				0698A9651EAF2966005B375D /* GFObjcRuntime.m in Sources */,
 				0698A9501EAF2966005B375D /* NSString+MD5.m in Sources */,
 				0698A9561EAF2966005B375D /* UIImage+Clip.m in Sources */,
-				068CEE1C1EBC747400B04910 /* CWeatherCell.m in Sources */,
 				0698A94F1EAF2966005B375D /* NSString+Length.m in Sources */,
 				0698A9571EAF2966005B375D /* UIImage+Color.m in Sources */,
 				0698A9491EAF2966005B375D /* NSDate+Convert.m in Sources */,
