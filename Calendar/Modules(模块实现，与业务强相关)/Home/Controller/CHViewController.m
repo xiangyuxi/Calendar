@@ -18,18 +18,6 @@
 
 #pragma mark - Properties
 
-- (VBFPopFlatButton *)menuButton {
-    if (!_menuButton) {
-        _menuButton = [[VBFPopFlatButton alloc] initWithFrame:CGRectMake(10, 30, 24, 24)
-                                                   buttonType:buttonMenuType
-                                                  buttonStyle:buttonPlainStyle
-                                        animateToInitialState:NO];
-        _menuButton.tintColor = [UIColor colorWithHex:0x00A6F3];
-        [self.homeNavgationBar addSubview:_menuButton];
-    }
-    return _menuButton;
-}
-
 - (void)setCurrentDate:(NSDate *)currentDate {
     _currentDate = currentDate;
     NSString *dateString = [NSDate converDate:_currentDate toStringWithFormatter:@"yyyy-MM-dd"];
@@ -72,14 +60,6 @@
     self.countingLabel.method = UILabelCountingMethodEaseInOut;
     
     self.currentDate = [NSDate date];
-    
-    [[self.menuButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(VBFPopFlatButton *sender) {
-        if (sender.currentButtonType == buttonAddType) {
-            NSLog(@"add");
-        }else if (sender.currentButtonType == buttonMenuType) {
-            NSLog(@"menu");
-        }
-    }];
     
 //    self.tableView.delegate = self;
 //    self.tableView.dataSource = self;

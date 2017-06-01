@@ -37,8 +37,6 @@
 
 #pragma mark - Navigation item
 
-@property (copy, nonatomic) VBFPopFlatButton *menuButton;
-
 #pragma mark - Date
 
 @property (copy, nonatomic) NSDate *currentDate;

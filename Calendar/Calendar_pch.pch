@@ -13,7 +13,6 @@
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <pop/POP.h>
-#import <VBFPopFlatButton/VBFPopFlatButton.h>
 #import <JVFloatLabeledTextField/JVFloatLabeledTextView.h>
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 #import <UICountingLabel/UICountingLabel.h>
