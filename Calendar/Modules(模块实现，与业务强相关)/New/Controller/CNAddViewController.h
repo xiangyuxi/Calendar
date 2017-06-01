@@ -6,9 +6,9 @@
 //  Copyright © 2017年 xyx. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CBaseViewController.h"
 
-@interface CNAddViewController : UIViewController
+@interface CNAddViewController : CBaseViewController
 
 @property (copy, nonatomic) NSArray *dateArray; // [year, month, day]
 

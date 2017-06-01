@@ -51,6 +51,8 @@
 		0698A9681EAF2966005B375D /* GFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A9431EAF2966005B375D /* GFModel.m */; };
 		0698A9691EAF2966005B375D /* GFRegularExp.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A9461EAF2966005B375D /* GFRegularExp.m */; };
 		0698A9821EAF53E4005B375D /* CTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A9811EAF53E4005B375D /* CTools.m */; };
+		069E79BD1EE00B2400D3161E /* CBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 069E79BC1EE00B2400D3161E /* CBaseViewController.m */; };
+		069E79BF1EE0125400D3161E /* background_.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 069E79BE1EE0125400D3161E /* background_.jpg */; };
 		26A5F09D7F9C0F44FABE6083 /* libPods-Calendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A76919E0E6A743EA9A81F7 /* libPods-Calendar.a */; };
 		751068111EDC6F5D00F4F21C /* CNAFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 751068101EDC6F5D00F4F21C /* CNAFlowLayout.m */; };
 		75E526691EDD7C1F0073EFFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E526681EDD7C1F0073EFFB /* Assets.xcassets */; };
@@ -185,6 +187,9 @@
 		0698A9731EAF307C005B375D /* Calendar_pch.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Calendar_pch.pch; sourceTree = "<group>"; };
 		0698A9801EAF53E4005B375D /* CTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTools.h; sourceTree = "<group>"; };
 		0698A9811EAF53E4005B375D /* CTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTools.m; sourceTree = "<group>"; };
+		069E79BB1EE00B2400D3161E /* CBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBaseViewController.h; sourceTree = "<group>"; };
+		069E79BC1EE00B2400D3161E /* CBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBaseViewController.m; sourceTree = "<group>"; };
+		069E79BE1EE0125400D3161E /* background_.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_.jpg; sourceTree = "<group>"; };
 		7510680F1EDC6F5D00F4F21C /* CNAFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNAFlowLayout.h; sourceTree = "<group>"; };
 		751068101EDC6F5D00F4F21C /* CNAFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNAFlowLayout.m; sourceTree = "<group>"; };
 		75E526681EDD7C1F0073EFFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -563,6 +568,7 @@
 		0698A9371EAF2966005B375D /* Modules(模块实现，与业务强相关) */ = {
 			isa = PBXGroup;
 			children = (
+				069E79BA1EE004D700D3161E /* Base */,
 				0670AA451EC1A6FD00472EB7 /* New */,
 				068E03001EB9B2DF0001754B /* Home */,
 				0698A97F1EAF53D9005B375D /* Tools */,
@@ -618,6 +624,15 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		069E79BA1EE004D700D3161E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				069E79BB1EE00B2400D3161E /* CBaseViewController.h */,
+				069E79BC1EE00B2400D3161E /* CBaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		7510680E1EDC6F5D00F4F21C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -630,6 +645,7 @@
 		75E526661EDD7C1F0073EFFB /* Media Resources(图片、音乐、本地plist等) */ = {
 			isa = PBXGroup;
 			children = (
+				069E79BE1EE0125400D3161E /* background_.jpg */,
 				75E526671EDD7C1F0073EFFB /* IMG */,
 			);
 			path = "Media Resources(图片、音乐、本地plist等)";
@@ -782,6 +798,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				069E79BF1EE0125400D3161E /* background_.jpg in Resources */,
 				0698A8B31EAF28B8005B375D /* LaunchScreen.storyboard in Resources */,
 				060273A21ED7DFD500AF3707 /* CDatePickerView.xib in Resources */,
 				0698A8AE1EAF28B8005B375D /* Main.storyboard in Resources */,
@@ -874,6 +891,7 @@
 				0698A8A51EAF28B8005B375D /* main.m in Sources */,
 				0698A94E1EAF2966005B375D /* NSString+Encrypt.m in Sources */,
 				75F5D5A21EDC1E9C0074BED0 /* CNACollectionViewCell.m in Sources */,
+				069E79BD1EE00B2400D3161E /* CBaseViewController.m in Sources */,
 				0698A95D1EAF2966005B375D /* UIView+Frame.m in Sources */,
 				0698A9521EAF2966005B375D /* NSString+Size.m in Sources */,
 				0698A95C1EAF2966005B375D /* UITextField+Placeholder.m in Sources */,

@@ -14,7 +14,7 @@
 #define DefaultTextColor ColorFromRGB(51, 51, 51, 1)
 #define HighlightTextColor [UIColor whiteColor]
 #define SegmentedControlBackgroundColor ColorFromRGB(237, 242, 247, 0.7)
-#define SliderColor ColorFromRGB(0, 166, 243, 1)
+#define SliderColor ColorFromRGB(21, 128, 226, 1)
 
 CGFloat amount(CGFloat amo, CGFloat alpha) {
     return (1 - alpha) * 255 + alpha * amo;

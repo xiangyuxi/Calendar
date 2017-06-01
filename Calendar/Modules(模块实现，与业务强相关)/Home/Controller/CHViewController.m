@@ -12,52 +12,6 @@
 
 @interface CHViewController () <UITableViewDelegate, UITableViewDataSource>
 
-#pragma mark - IBOutlet
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIButton *yearMonthBtn;
-@property (weak, nonatomic) IBOutlet UIView *homeNavgationBar;
-@property (weak, nonatomic) IBOutlet UIView *waterWaveView;
-@property (weak, nonatomic) IBOutlet UILabel *staticLabel;
-@property (weak, nonatomic) IBOutlet UICountingLabel *countingLabel;
-@property (weak, nonatomic) IBOutlet UIView *payView;
-@property (weak, nonatomic) IBOutlet UICountingLabel *payLabel;
-@property (weak, nonatomic) IBOutlet UIView *incomeView;
-@property (weak, nonatomic) IBOutlet UICountingLabel *incomeLabel;
-
-#pragma mark - Water wave
-
-@property (assign, nonatomic) CGFloat waveHeight;
-@property (assign, nonatomic) CGFloat waveWidth;
-@property (assign, nonatomic) CGFloat waveAmplitude;
-@property (strong, nonatomic) CAShapeLayer *waveShapeLayer;
-@property (assign, nonatomic) CGFloat offsetX;
-@property (assign, nonatomic) CGFloat waveSpeed;
-@property (strong, nonatomic) CAShapeLayer *waveShapeLayerT;
-@property (assign, nonatomic) CGFloat offsetXT;
-@property (strong, nonatomic) CADisplayLink *waveDisplayLink;
-
-#pragma mark - Navigation item
-
-@property (copy, nonatomic) VBFPopFlatButton *menuButton;
-
-#pragma mark - Date
-
-@property (copy, nonatomic) NSDate *currentDate;
-@property (assign, nonatomic) NSInteger year;
-@property (assign, nonatomic) NSInteger month;
-@property (assign, nonatomic) NSInteger day;
-
-#pragma mark - Counting
-
-@property (copy, nonatomic) NSString *payString;
-@property (copy, nonatomic) NSString *incomeString;
-
-#pragma mark - Add
-
-@property (weak, nonatomic) IBOutlet UIView *addView;
-@property (weak, nonatomic) IBOutlet UIButton *addButton;
-
 @end
 
 @implementation CHViewController
@@ -104,7 +58,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+        
     self.payLabel.format =
     self.incomeLabel.format =
     self.countingLabel.format = @"%.2f";
@@ -112,6 +66,9 @@
     self.payLabel.positiveFormat =
     self.incomeLabel.positiveFormat =
     self.countingLabel.positiveFormat = @"###,##0.00";
+    
+    self.payLabel.method =
+    self.incomeLabel.method =
     self.countingLabel.method = UILabelCountingMethodEaseInOut;
     
     self.currentDate = [NSDate date];
@@ -127,13 +84,15 @@
 //    self.tableView.delegate = self;
 //    self.tableView.dataSource = self;
     
-    [self wave];
+    [self makeViewInWaterWaView];
     
     [self bringViewToFront];
     
     [self makeCornerRadius];
     
     [self makeGradientWithinAddView];
+    
+//    [self makeShadowWithinTopView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -191,10 +150,7 @@
     self.incomeView.layer.mask = shape;
 }
 
-- (void)wave {
-    /*
-     *创建两个layer
-     */
+- (void)makeViewInWaterWaView {
     self.offsetX =
     self.offsetXT= 80;
     self.waveSpeed = 2; // 水波速度
@@ -203,11 +159,11 @@
     self.waveAmplitude = 15; // 振幅
     
     self.waveShapeLayer = [CAShapeLayer layer];
-    self.waveShapeLayer.fillColor = [[UIColor blackColor] colorWithAlphaComponent:0.1].CGColor;
+    self.waveShapeLayer.fillColor = [UIColor colorWithHex:0x1580E2 alpha:0.1].CGColor;
     [self.waterWaveView.layer addSublayer:self.waveShapeLayer];
     
     self.waveShapeLayerT = [CAShapeLayer layer];
-    self.waveShapeLayerT.fillColor = [[UIColor blackColor] colorWithAlphaComponent:0.1].CGColor;
+    self.waveShapeLayerT.fillColor = [UIColor colorWithHex:0x1580E2 alpha:0.1].CGColor;
     [self.waterWaveView.layer addSublayer:self.waveShapeLayerT];
 }
 
@@ -218,13 +174,19 @@
     [self.addView.layer insertSublayer:gradientLayer atIndex:0];
 }
 
+- (void)makeShadowWithinTopView {
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = CGRectMake(0, 184, kScrWidth, 5);
+    gradientLayer.colors = @[(__bridge id)[UIColor colorWithHex:0x333333 alpha:0.2].CGColor,(__bridge id)[UIColor colorWithHex:0x333333 alpha:0].CGColor];
+    [self.view.layer addSublayer:gradientLayer];
+}
+
 #pragma mark - Actions
 
 - (IBAction)addNewAction:(id)sender {
     [self performSegueWithIdentifier:@"addNew" sender:nil];
 }
 
-//CADispayLink相当于一个定时器 会一直绘制曲线波纹 看似在运动，其实是一直在绘画不同位置点的余弦函数曲线
 - (void)getCurrentWave {
     //offsetX决定x位置，如果想搞明白可以多试几次
     self.offsetX += self.waveSpeed;
@@ -250,9 +212,6 @@
     //释放绘图路径
     CGPathRelease(path);
     
-    /*
-     *  第二个
-     */
     self.offsetXT += self.waveSpeed;
     CGMutablePathRef pathT = CGPathCreateMutable();
     CGPathMoveToPoint(pathT, nil, 0, self.waveHeight+100);

@@ -44,6 +44,9 @@ static NSString *kPayTypeCellIdentifier = @"addTypeCell";
     
     self.textView = [[JVFloatLabeledTextView alloc] initWithFrame:CGRectMake(0, 5, kScrWidth-20, 135)];
     self.textView.placeholder = @"请输入详细信息";
+    self.textView.backgroundColor = [UIColor clearColor];
+    self.textView.floatingLabelActiveTextColor = [UIColor colorWithHex:0x00A6F3];
+    self.textView.textColor = [UIColor whiteColor];
     self.textView.font = [UIFont systemFontOfSize:15];
     [self.textInputView addSubview:self.textView];
     
