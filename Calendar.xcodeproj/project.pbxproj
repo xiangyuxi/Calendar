@@ -52,10 +52,10 @@
 		0698A9691EAF2966005B375D /* GFRegularExp.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A9461EAF2966005B375D /* GFRegularExp.m */; };
 		0698A9821EAF53E4005B375D /* CTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A9811EAF53E4005B375D /* CTools.m */; };
 		069E79BD1EE00B2400D3161E /* CBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 069E79BC1EE00B2400D3161E /* CBaseViewController.m */; };
-		069E79BF1EE0125400D3161E /* background_.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 069E79BE1EE0125400D3161E /* background_.jpg */; };
 		26A5F09D7F9C0F44FABE6083 /* libPods-Calendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A76919E0E6A743EA9A81F7 /* libPods-Calendar.a */; };
 		751068111EDC6F5D00F4F21C /* CNAFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 751068101EDC6F5D00F4F21C /* CNAFlowLayout.m */; };
 		75E526691EDD7C1F0073EFFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E526681EDD7C1F0073EFFB /* Assets.xcassets */; };
+		75F0A8EE1EE05C3300871EBE /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 75F0A8ED1EE05C3300871EBE /* background.jpg */; };
 		75F5D5911EDBAE480074BED0 /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5901EDBAE480074BED0 /* UIView+Shadow.m */; };
 		75F5D5941EDBAF1A0074BED0 /* SegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5931EDBAF1A0074BED0 /* SegmentControl.m */; };
 		75F5D5971EDBC6960074BED0 /* CNAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5961EDBC6960074BED0 /* CNAddViewController.m */; };
@@ -189,10 +189,10 @@
 		0698A9811EAF53E4005B375D /* CTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTools.m; sourceTree = "<group>"; };
 		069E79BB1EE00B2400D3161E /* CBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBaseViewController.h; sourceTree = "<group>"; };
 		069E79BC1EE00B2400D3161E /* CBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBaseViewController.m; sourceTree = "<group>"; };
-		069E79BE1EE0125400D3161E /* background_.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_.jpg; sourceTree = "<group>"; };
 		7510680F1EDC6F5D00F4F21C /* CNAFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNAFlowLayout.h; sourceTree = "<group>"; };
 		751068101EDC6F5D00F4F21C /* CNAFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNAFlowLayout.m; sourceTree = "<group>"; };
 		75E526681EDD7C1F0073EFFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		75F0A8ED1EE05C3300871EBE /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		75F5D58E1EDBAB510074BED0 /* SCHader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCHader.h; sourceTree = "<group>"; };
 		75F5D58F1EDBAE480074BED0 /* UIView+Shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shadow.h"; sourceTree = "<group>"; };
 		75F5D5901EDBAE480074BED0 /* UIView+Shadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shadow.m"; sourceTree = "<group>"; };
@@ -645,7 +645,6 @@
 		75E526661EDD7C1F0073EFFB /* Media Resources(图片、音乐、本地plist等) */ = {
 			isa = PBXGroup;
 			children = (
-				069E79BE1EE0125400D3161E /* background_.jpg */,
 				75E526671EDD7C1F0073EFFB /* IMG */,
 			);
 			path = "Media Resources(图片、音乐、本地plist等)";
@@ -654,6 +653,7 @@
 		75E526671EDD7C1F0073EFFB /* IMG */ = {
 			isa = PBXGroup;
 			children = (
+				75F0A8ED1EE05C3300871EBE /* background.jpg */,
 				75E526681EDD7C1F0073EFFB /* Assets.xcassets */,
 			);
 			path = IMG;
@@ -798,8 +798,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				069E79BF1EE0125400D3161E /* background_.jpg in Resources */,
 				0698A8B31EAF28B8005B375D /* LaunchScreen.storyboard in Resources */,
+				75F0A8EE1EE05C3300871EBE /* background.jpg in Resources */,
 				060273A21ED7DFD500AF3707 /* CDatePickerView.xib in Resources */,
 				0698A8AE1EAF28B8005B375D /* Main.storyboard in Resources */,
 				75E526691EDD7C1F0073EFFB /* Assets.xcassets in Resources */,

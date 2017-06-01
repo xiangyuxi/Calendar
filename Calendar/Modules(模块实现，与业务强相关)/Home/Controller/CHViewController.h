@@ -10,19 +10,6 @@
 
 @interface CHViewController : CBaseViewController
 
-#pragma mark - IBOutlet
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIButton *yearMonthBtn;
-@property (weak, nonatomic) IBOutlet UIView *homeNavgationBar;
-@property (weak, nonatomic) IBOutlet UIView *waterWaveView;
-@property (weak, nonatomic) IBOutlet UILabel *staticLabel;
-@property (weak, nonatomic) IBOutlet UICountingLabel *countingLabel;
-@property (weak, nonatomic) IBOutlet UIView *payView;
-@property (weak, nonatomic) IBOutlet UICountingLabel *payLabel;
-@property (weak, nonatomic) IBOutlet UIView *incomeView;
-@property (weak, nonatomic) IBOutlet UICountingLabel *incomeLabel;
-
 #pragma mark - Water wave
 
 @property (assign, nonatomic) CGFloat waveHeight;
@@ -43,15 +30,5 @@
 @property (assign, nonatomic) NSInteger year;
 @property (assign, nonatomic) NSInteger month;
 @property (assign, nonatomic) NSInteger day;
-
-#pragma mark - Counting
-
-@property (copy, nonatomic) NSString *payString;
-@property (copy, nonatomic) NSString *incomeString;
-
-#pragma mark - Add
-
-@property (weak, nonatomic) IBOutlet UIView *addView;
-@property (weak, nonatomic) IBOutlet UIButton *addButton;
 
 @end

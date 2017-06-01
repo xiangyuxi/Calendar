@@ -91,11 +91,11 @@
 #endif
         return;
     }
-    _style = style;
-    switch (_style) {
+    _effect = style;
+    switch (_effect) {
         case GFEffectViewStyleLight:
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
-            _effectView.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+            _effectView.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
 #else
             _effectBar.barStyle = UIBarStyleDefault;
 #endif
@@ -114,7 +114,7 @@
 - (UIVisualEffectView *)effectView
 {
     if (_effectView) return _effectView;
-    _effectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
+    _effectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
     _effectView.frame = self.bounds;
     _effectView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     return _effectView;

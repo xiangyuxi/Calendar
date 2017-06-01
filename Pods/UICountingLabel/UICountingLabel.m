@@ -208,8 +208,7 @@
             if (self.positiveFormat.length > 0) {
                 NSString *str = [NSString stringWithFormat:self.format,value];
                 NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-                formatter.numberStyle = NSNumberFormatterDecimalStyle;
-                formatter.positiveFormat = self.positiveFormat;
+                formatter.numberStyle = kCFNumberFormatterCurrencyStyle;
                 self.text = [NSString stringWithFormat:@"%@",[formatter stringFromNumber:[NSNumber numberWithFloat:[str floatValue]]]];
             }else {
                 self.text = [NSString stringWithFormat:self.format,value];

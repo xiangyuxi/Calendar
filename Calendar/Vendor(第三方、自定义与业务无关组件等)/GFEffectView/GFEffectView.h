@@ -29,6 +29,6 @@ typedef NS_ENUM(NSUInteger, GFEffectViewStyle) {
 /**
  默认YXEffectStyleDefault，必须translucent为YES才有效
  */
-@property (assign, nonatomic) IBInspectable GFEffectViewStyle style;
+@property (assign, nonatomic) IBInspectable GFEffectViewStyle effect;
 
 @end

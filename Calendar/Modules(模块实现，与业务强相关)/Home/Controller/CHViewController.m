@@ -10,7 +10,13 @@
 #import "CDatePickerView.h"
 #import "CNAddViewController.h"
 
-@interface CHViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface CHViewController () /** <UITableViewDelegate, UITableViewDataSource>*/
+
+@property (weak, nonatomic) IBOutlet UIButton *showMoreButton;
+@property (weak, nonatomic) IBOutlet UICountingLabel *countingLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *incomeTitleLabel;
+@property (weak, nonatomic) IBOutlet UICountingLabel *incomeMoneyLabel;
 
 @end
 
@@ -28,65 +34,34 @@
     [self updateUIElements];
 }
 
-- (void)setIncomeString:(NSString *)incomeString {
-    if (![_incomeString isEqualToString:incomeString]) {
-        _incomeString = incomeString;
-        [self updateCountingLabelText];
-    }
-}
-
-- (void)setPayString:(NSString *)payString {
-    if (![_payString isEqualToString:payString]) {
-        _payString = payString;
-        [self updateCountingLabelText];
-    }
-}
-
 #pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
-    self.payLabel.format =
-    self.incomeLabel.format =
-    self.countingLabel.format = @"%.2f";
-    
-    self.payLabel.positiveFormat =
-    self.incomeLabel.positiveFormat =
-    self.countingLabel.positiveFormat = @"###,##0.00";
-    
-    self.payLabel.method =
-    self.incomeLabel.method =
-    self.countingLabel.method = UILabelCountingMethodEaseInOut;
-    
     self.currentDate = [NSDate date];
     
-//    self.tableView.delegate = self;
-//    self.tableView.dataSource = self;
+    self.countingLabel.format = @"%.2f";
+    self.countingLabel.positiveFormat = @"###,##0.00";
+    
+    self.incomeMoneyLabel.format = @"%.2f";
+    self.incomeMoneyLabel.positiveFormat = @"###,##0.00";
     
     [self makeViewInWaterWaView];
     
-    [self bringViewToFront];
+    [self.view bringSubviewToFront:self.incomeTitleLabel];
+    [self.view bringSubviewToFront:self.incomeMoneyLabel];
     
-    [self makeCornerRadius];
-    
-    [self makeGradientWithinAddView];
-    
-//    [self makeShadowWithinTopView];
+    [self makeShowMoreButtonShadow];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    self.navigationController.navigationBarHidden = YES;
+    
+    [self.countingLabel countFromCurrentValueTo:8789.00];
+    [self.incomeMoneyLabel countFromCurrentValueTo:6789.89];
     
     self.waveDisplayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(getCurrentWave)];
     [self.waveDisplayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    self.payString = @"5481.56";
-    self.incomeString = @"7421.64";
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -98,73 +73,54 @@
 #pragma mark - private
 
 - (void)updateUIElements {
-    [self.yearMonthBtn setTitle:[NSString stringWithFormat:@"%lu年%lu月",self.year,self.month] forState:UIControlStateNormal];
+    self.title = [NSString stringWithFormat:@"%lu年%lu月",self.year,self.month];
 }
 
-- (void)updateCountingLabelText {
-    [self.payLabel countFromCurrentValueTo:[_payString floatValue]];
-    [self.incomeLabel countFromCurrentValueTo:[_incomeString floatValue]];
-    [self.countingLabel countFromCurrentValueTo:[_incomeString floatValue]-[_payString floatValue]];
-}
-
-- (void)bringViewToFront {
-    [self.waterWaveView bringSubviewToFront:self.countingLabel];
-    [self.waterWaveView bringSubviewToFront:self.staticLabel];
-    [self.waterWaveView bringSubviewToFront:self.payView];
-    [self.waterWaveView bringSubviewToFront:self.incomeView];
-}
-
-- (void)makeCornerRadius {
-    UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, 75, 32)
-                                                  byRoundingCorners:UIRectCornerTopRight | UIRectCornerBottomRight
-                                                        cornerRadii:CGSizeMake(16, 16)];
-    CAShapeLayer* shape = [[CAShapeLayer alloc] init];
-    [shape setPath:rounded.CGPath];
-    self.payView.layer.mask = shape;
+- (void)makeShowMoreButtonShadow {
+    self.showMoreButton.cornerRadius = 25;
+    self.showMoreButton.layer.shadowRadius = 25;
+    self.showMoreButton.layer.shadowColor = [UIColor colorWithHex:0x3DA1FF].CGColor;
+    self.showMoreButton.layer.shadowOpacity = 0.8;
+    self.showMoreButton.layer.shadowOffset = CGSizeMake(0, 30);
     
-    rounded = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, 75, 32)
-                                    byRoundingCorners:UIRectCornerTopLeft | UIRectCornerBottomLeft
-                                          cornerRadii:CGSizeMake(16, 16)];
-    shape = [[CAShapeLayer alloc] init];
-    [shape setPath:rounded.CGPath];
-    self.incomeView.layer.mask = shape;
+    [self.view bringSubviewToFront:self.showMoreButton];
 }
 
 - (void)makeViewInWaterWaView {
+    
     self.offsetX =
-    self.offsetXT= 80;
+    self.offsetXT= kScrWidth/0.8;
     self.waveSpeed = 2; // 水波速度
     self.waveWidth = kScrWidth; // 水波长度（直线）
-    self.waveHeight = 55; // x轴
-    self.waveAmplitude = 15; // 振幅
+    self.waveHeight = kScrHeight/2.5; // x轴
+    self.waveAmplitude = 10; // 振幅
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.colors = @[(__bridge id)[UIColor colorWithHex:0xC9E4FF alpha:0.05].CGColor,(__bridge id)[UIColor colorWithHex:0x3DA1FF alpha:0.95].CGColor];
+    gradient.frame = CGRectMake(0, 0, kScrWidth, kScrHeight);
+    [self.view.layer addSublayer:gradient];
     
     self.waveShapeLayer = [CAShapeLayer layer];
-    self.waveShapeLayer.fillColor = [UIColor colorWithHex:0x1580E2 alpha:0.1].CGColor;
-    [self.waterWaveView.layer addSublayer:self.waveShapeLayer];
+    self.waveShapeLayer.fillColor = [UIColor redColor].CGColor;
+    gradient.mask = self.waveShapeLayer;
     
+    CAGradientLayer *gradientT = [CAGradientLayer layer];
+    gradientT.colors = @[(__bridge id)[UIColor colorWithHex:0xC9E4FF alpha:0.05].CGColor,(__bridge id)[UIColor colorWithHex:0x9DCEFF alpha:0.95].CGColor];
+    gradientT.frame = CGRectMake(0, 0, kScrWidth, kScrHeight);
+    [self.view.layer addSublayer:gradientT];
+
     self.waveShapeLayerT = [CAShapeLayer layer];
-    self.waveShapeLayerT.fillColor = [UIColor colorWithHex:0x1580E2 alpha:0.1].CGColor;
-    [self.waterWaveView.layer addSublayer:self.waveShapeLayerT];
+    self.waveShapeLayerT.fillColor = [UIColor redColor].CGColor;
+    gradientT.mask = self.waveShapeLayerT;
 }
 
-- (void)makeGradientWithinAddView {
-    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.frame = self.addView.bounds;
-    gradientLayer.colors = @[(__bridge id)[UIColor colorWithHex:0xffffff alpha:0].CGColor,(__bridge id)[UIColor colorWithHex:0xffffff].CGColor];
-    [self.addView.layer insertSublayer:gradientLayer atIndex:0];
-}
-
-- (void)makeShadowWithinTopView {
-    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.frame = CGRectMake(0, 184, kScrWidth, 5);
-    gradientLayer.colors = @[(__bridge id)[UIColor colorWithHex:0x333333 alpha:0.2].CGColor,(__bridge id)[UIColor colorWithHex:0x333333 alpha:0].CGColor];
-    [self.view.layer addSublayer:gradientLayer];
-}
 
 #pragma mark - Actions
 
-- (IBAction)addNewAction:(id)sender {
+- (IBAction)addActioin:(id)sender {
     [self performSegueWithIdentifier:@"addNew" sender:nil];
+}
+- (IBAction)menuAction:(id)sender {
 }
 
 - (void)getCurrentWave {
@@ -183,8 +139,8 @@
         x++;
     }
     //把绘图信息添加到路径里
-    CGPathAddLineToPoint(path, nil, self.waveWidth, CGRectGetHeight(self.waterWaveView.frame));
-    CGPathAddLineToPoint(path, nil, 0, CGRectGetHeight(self.waterWaveView.frame));
+    CGPathAddLineToPoint(path, nil, self.waveWidth, CGRectGetHeight(self.view.frame));
+    CGPathAddLineToPoint(path, nil, 0, CGRectGetHeight(self.view.frame));
     //结束绘图信息
     CGPathCloseSubpath(path);
     
@@ -201,27 +157,13 @@
         yT = self.waveAmplitude*1.6 * sin((260 / self.waveWidth) * (x * M_PI / 180) - self.offsetXT * M_PI / 180) + self.waveHeight;
         CGPathAddLineToPoint(pathT, nil, x, yT-10);
     }
-    CGPathAddLineToPoint(pathT, nil, self.waveWidth, CGRectGetHeight(self.waterWaveView.frame));
-    CGPathAddLineToPoint(pathT, nil, 0, CGRectGetHeight(self.waterWaveView.frame));
+    CGPathAddLineToPoint(pathT, nil, self.waveWidth, CGRectGetHeight(self.view.frame));
+    CGPathAddLineToPoint(pathT, nil, 0, CGRectGetHeight(self.view.frame));
     CGPathCloseSubpath(pathT);
     self.waveShapeLayerT.path = pathT;
     CGPathRelease(pathT);
 }
 
-- (IBAction)yearMonthAction:(UIButton *)sender {
-    CDatePickerView *pickerView = [CDatePickerView loadInstanceFromNibWithSelectedBlock:^(NSDate *date) {
-        NSString *fmt = [date convertToStringWithFormatter:@"yyyy/MM/dd"];
-        NSArray *fmtArray = [fmt componentsSeparatedByString:@"/"];
-        
-        self.year = [fmtArray[0] integerValue];
-        self.month = [fmtArray[1] integerValue];
-        self.day = [fmtArray[2] integerValue];
-        
-        [self updateUIElements];
-    }];
-    pickerView.type = CDatePickerTypeDate;
-    [pickerView showDatePickerView];
-}
 
 #pragma mark - Segue
 

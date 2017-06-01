@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CBaseViewController : UIViewController
+@interface CBaseViewController : UIViewController <UIGestureRecognizerDelegate>
 
 @end
