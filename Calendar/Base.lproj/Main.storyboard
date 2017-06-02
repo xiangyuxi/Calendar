@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dN6-Th-Pmz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dN6-Th-Pmz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,6 +9,14 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-UI-Display-Regular.otf">
+            <string>SFUIDisplay-Regular</string>
+        </array>
+        <array key="SF-UI-Text-Regular.otf">
+            <string>SFUIText-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -29,39 +37,39 @@
                                     <constraint firstAttribute="height" constant="50" id="FlB-8d-QIn"/>
                                     <constraint firstAttribute="width" constant="160" id="zuM-FN-VTH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="17"/>
                                 <state key="normal" title="查看明细">
                                     <color key="titleColor" red="0.27058823529999998" green="0.60784313729999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8789.00" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="bMK-aP-v7R" customClass="UICountingLabel">
-                                <rect key="frame" x="20" y="236" width="335" height="61.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="45"/>
+                                <rect key="frame" x="20" y="226.5" width="335" height="54"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="45"/>
                                 <color key="textColor" red="0.27058823529411763" green="0.60784313725490191" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本月支出" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhJ-zN-IHH">
-                                <rect key="frame" x="157.5" y="323" width="60" height="20.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <rect key="frame" x="157.5" y="306" width="60" height="18"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5E-gW-iB3" customClass="UICountingLabel">
-                                <rect key="frame" x="154.5" y="343.5" width="66.5" height="34.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
+                                <rect key="frame" x="158.5" y="324" width="59" height="30"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本月总和" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKT-P5-H2p">
-                                <rect key="frame" x="157" y="215.5" width="60" height="20.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <rect key="frame" x="157" y="208.5" width="60" height="18"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="15"/>
                                 <color key="textColor" red="0.27058823529999998" green="0.60784313729999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bMK-aP-v7R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="bottom" multiplier="0.4" id="2Kz-LQ-IfQ"/>
+                            <constraint firstItem="bMK-aP-v7R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="bottom" multiplier="0.38" id="2Kz-LQ-IfQ"/>
                             <constraint firstItem="bMK-aP-v7R" firstAttribute="top" secondItem="YKT-P5-H2p" secondAttribute="bottom" id="BiK-9p-xsP"/>
                             <constraint firstItem="Ph1-Nc-qiB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DqR-ac-GCd"/>
                             <constraint firstItem="PhJ-zN-IHH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Edm-pO-EXx"/>
@@ -83,7 +91,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="加" id="5Z0-Sd-MQm">
                             <connections>
-                                <action selector="addActioin:" destination="BYZ-38-t0r" id="LAp-sC-fBK"/>
+                                <segue destination="J2S-HU-L3h" kind="show" id="a9q-8y-yZA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -92,7 +100,6 @@
                         <outlet property="incomeMoneyLabel" destination="B5E-gW-iB3" id="MhB-DI-Bzl"/>
                         <outlet property="incomeTitleLabel" destination="PhJ-zN-IHH" id="8o0-ap-bJ2"/>
                         <outlet property="showMoreButton" destination="Ph1-Nc-qiB" id="5nl-nf-oeB"/>
-                        <segue destination="J2S-HU-L3h" kind="show" identifier="addNew" id="YJB-Wr-2AW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -10,13 +10,15 @@
 #import "CDatePickerView.h"
 #import "CNAddViewController.h"
 
-@interface CHViewController () /** <UITableViewDelegate, UITableViewDataSource>*/
+@interface CHViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *showMoreButton;
 @property (weak, nonatomic) IBOutlet UICountingLabel *countingLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *incomeTitleLabel;
 @property (weak, nonatomic) IBOutlet UICountingLabel *incomeMoneyLabel;
+
+@property (copy, nonatomic) UIScreenEdgePanGestureRecognizer *edgeGesture; // 侧滑手势
 
 @end
 
@@ -34,10 +36,21 @@
     [self updateUIElements];
 }
 
+- (UIScreenEdgePanGestureRecognizer *)edgeGesture {
+    if (!_edgeGesture) {
+        _edgeGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(respondsToEdgeRecognizer:)];
+        _edgeGesture.edges = UIRectEdgeLeft;
+    }
+    return _edgeGesture;
+}
+
 #pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.view addGestureRecognizer:self.edgeGesture];
+    
     self.currentDate = [NSDate date];
     
     self.countingLabel.format = @"%.2f";
@@ -117,9 +130,10 @@
 
 #pragma mark - Actions
 
-- (IBAction)addActioin:(id)sender {
-    [self performSegueWithIdentifier:@"addNew" sender:nil];
+- (void)respondsToEdgeRecognizer:(UIScreenEdgePanGestureRecognizer *)recognizer {
+    NSLog(@"%@",recognizer);
 }
+
 - (IBAction)menuAction:(id)sender {
 }
 
