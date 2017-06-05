@@ -22,20 +22,6 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    /*
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScrWidth, kScrHeight)];
-    imageView.image = [UIImage imageNamed:@"background.jpg"];
-    [self.view addSubview:imageView];
-    
-    GFEffectView *effectView = [[GFEffectView alloc] initWithFrame:CGRectMake(0, 0, kScrWidth, kScrHeight)];
-    effectView.backgroundColor = [UIColor clearColor];
-    effectView.translucent = YES;
-    effectView.effect = GFEffectViewStyleLight;
-    [self.view addSubview:effectView];
-    
-    [self.view sendSubviewToBack:effectView];
-    [self.view sendSubviewToBack:imageView];
-    */
     
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     self.navigationController.interactivePopGestureRecognizer.delegate = self;

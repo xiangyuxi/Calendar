@@ -7,7 +7,6 @@ target “Calendar” do
 	pod 'MJExtension'
     pod 'IQKeyboardManager'
     pod 'JVFloatLabeledTextField'
-    pod 'pop'
     pod 'VBFPopFlatButton'
     pod 'YBPopupMenu'
     pod 'UICountingLabel'

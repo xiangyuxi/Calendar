@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		060273A01ED7DFC300AF3707 /* CDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0602739F1ED7DFC300AF3707 /* CDatePickerView.m */; };
-		060273A21ED7DFD500AF3707 /* CDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060273A11ED7DFD500AF3707 /* CDatePickerView.xib */; };
 		068E00DF1EE0F2C5007BC67A /* License Agreement for SF UI Font.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 068E00C91EE0F2C5007BC67A /* License Agreement for SF UI Font.rtf */; };
 		068E00E01EE0F2C5007BC67A /* SF-UI-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 068E00CA1EE0F2C5007BC67A /* SF-UI-Display-Black.otf */; };
 		068E00E11EE0F2C5007BC67A /* SF-UI-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 068E00CB1EE0F2C5007BC67A /* SF-UI-Display-Bold.otf */; };
@@ -76,8 +74,10 @@
 		069E79BD1EE00B2400D3161E /* CBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 069E79BC1EE00B2400D3161E /* CBaseViewController.m */; };
 		26A5F09D7F9C0F44FABE6083 /* libPods-Calendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A76919E0E6A743EA9A81F7 /* libPods-Calendar.a */; };
 		751068111EDC6F5D00F4F21C /* CNAFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 751068101EDC6F5D00F4F21C /* CNAFlowLayout.m */; };
+		751D169F1EE3DE15000A8EF1 /* CSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751D169E1EE3DE15000A8EF1 /* CSViewController.m */; };
+		752D179E1EE5A35100FF48C9 /* penjing.png in Resources */ = {isa = PBXBuildFile; fileRef = 752D179D1EE5A35100FF48C9 /* penjing.png */; };
+		752D17A21EE5A7D900FF48C9 /* girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 752D17A11EE5A7D900FF48C9 /* girl.png */; };
 		75E526691EDD7C1F0073EFFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E526681EDD7C1F0073EFFB /* Assets.xcassets */; };
-		75F0A8EE1EE05C3300871EBE /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 75F0A8ED1EE05C3300871EBE /* background.jpg */; };
 		75F5D5911EDBAE480074BED0 /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5901EDBAE480074BED0 /* UIView+Shadow.m */; };
 		75F5D5941EDBAF1A0074BED0 /* SegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5931EDBAF1A0074BED0 /* SegmentControl.m */; };
 		75F5D5971EDBC6960074BED0 /* CNAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5961EDBC6960074BED0 /* CNAddViewController.m */; };
@@ -104,9 +104,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0602739E1ED7DFC300AF3707 /* CDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDatePickerView.h; sourceTree = "<group>"; };
-		0602739F1ED7DFC300AF3707 /* CDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDatePickerView.m; sourceTree = "<group>"; };
-		060273A11ED7DFD500AF3707 /* CDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDatePickerView.xib; sourceTree = "<group>"; };
 		068E00C91EE0F2C5007BC67A /* License Agreement for SF UI Font.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "License Agreement for SF UI Font.rtf"; sourceTree = "<group>"; };
 		068E00CA1EE0F2C5007BC67A /* SF-UI-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Black.otf"; sourceTree = "<group>"; };
 		068E00CB1EE0F2C5007BC67A /* SF-UI-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Bold.otf"; sourceTree = "<group>"; };
@@ -235,8 +232,11 @@
 		069E79BC1EE00B2400D3161E /* CBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBaseViewController.m; sourceTree = "<group>"; };
 		7510680F1EDC6F5D00F4F21C /* CNAFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNAFlowLayout.h; sourceTree = "<group>"; };
 		751068101EDC6F5D00F4F21C /* CNAFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNAFlowLayout.m; sourceTree = "<group>"; };
+		751D169D1EE3DE15000A8EF1 /* CSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSViewController.h; sourceTree = "<group>"; };
+		751D169E1EE3DE15000A8EF1 /* CSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSViewController.m; sourceTree = "<group>"; };
+		752D179D1EE5A35100FF48C9 /* penjing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penjing.png; sourceTree = "<group>"; };
+		752D17A11EE5A7D900FF48C9 /* girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl.png; sourceTree = "<group>"; };
 		75E526681EDD7C1F0073EFFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		75F0A8ED1EE05C3300871EBE /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		75F5D58E1EDBAB510074BED0 /* SCHader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCHader.h; sourceTree = "<group>"; };
 		75F5D58F1EDBAE480074BED0 /* UIView+Shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shadow.h"; sourceTree = "<group>"; };
 		75F5D5901EDBAE480074BED0 /* UIView+Shadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shadow.m"; sourceTree = "<group>"; };
@@ -305,9 +305,6 @@
 				75F5D5C51EDC58970074BED0 /* YBPTableViewCell.h */,
 				75F5D5C61EDC58970074BED0 /* YBPTableViewCell.m */,
 				75F5D5C71EDC58970074BED0 /* YBPTableViewCell.xib */,
-				0602739E1ED7DFC300AF3707 /* CDatePickerView.h */,
-				0602739F1ED7DFC300AF3707 /* CDatePickerView.m */,
-				060273A11ED7DFD500AF3707 /* CDatePickerView.xib */,
 				75F5D5A01EDC1E9C0074BED0 /* CNACollectionViewCell.h */,
 				75F5D5A11EDC1E9C0074BED0 /* CNACollectionViewCell.m */,
 			);
@@ -641,6 +638,7 @@
 		0698A9371EAF2966005B375D /* Modules(模块实现，与业务强相关) */ = {
 			isa = PBXGroup;
 			children = (
+				751D16991EE3DD68000A8EF1 /* Setting */,
 				069E79BA1EE004D700D3161E /* Base */,
 				0670AA451EC1A6FD00472EB7 /* New */,
 				068E03001EB9B2DF0001754B /* Home */,
@@ -715,6 +713,39 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		751D16991EE3DD68000A8EF1 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				751D169A1EE3DD68000A8EF1 /* Controller */,
+				751D169B1EE3DD68000A8EF1 /* Model */,
+				751D169C1EE3DD68000A8EF1 /* View */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		751D169A1EE3DD68000A8EF1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				751D169D1EE3DE15000A8EF1 /* CSViewController.h */,
+				751D169E1EE3DE15000A8EF1 /* CSViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		751D169B1EE3DD68000A8EF1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		751D169C1EE3DD68000A8EF1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		75E526661EDD7C1F0073EFFB /* Media Resources(图片、音乐、本地plist等) */ = {
 			isa = PBXGroup;
 			children = (
@@ -727,7 +758,8 @@
 		75E526671EDD7C1F0073EFFB /* IMG */ = {
 			isa = PBXGroup;
 			children = (
-				75F0A8ED1EE05C3300871EBE /* background.jpg */,
+				752D17A11EE5A7D900FF48C9 /* girl.png */,
+				752D179D1EE5A35100FF48C9 /* penjing.png */,
 				75E526681EDD7C1F0073EFFB /* Assets.xcassets */,
 			);
 			path = IMG;
@@ -879,9 +911,8 @@
 				068E00E21EE0F2C5007BC67A /* SF-UI-Display-Heavy.otf in Resources */,
 				068E00E71EE0F2C5007BC67A /* SF-UI-Display-Thin.otf in Resources */,
 				068E00F31EE0F2C5007BC67A /* SF-UI-Text-Semibold.otf in Resources */,
-				75F0A8EE1EE05C3300871EBE /* background.jpg in Resources */,
+				752D17A21EE5A7D900FF48C9 /* girl.png in Resources */,
 				068E00EB1EE0F2C5007BC67A /* SF-UI-Text-Heavy.otf in Resources */,
-				060273A21ED7DFD500AF3707 /* CDatePickerView.xib in Resources */,
 				068E00EF1EE0F2C5007BC67A /* SF-UI-Text-LightItalic.otf in Resources */,
 				068E00ED1EE0F2C5007BC67A /* SF-UI-Text-Italic.otf in Resources */,
 				068E00F41EE0F2C5007BC67A /* SF-UI-Text-SemiboldItalic.otf in Resources */,
@@ -890,6 +921,7 @@
 				068E00E91EE0F2C5007BC67A /* SF-UI-Text-Bold.otf in Resources */,
 				068E00EC1EE0F2C5007BC67A /* SF-UI-Text-HeavyItalic.otf in Resources */,
 				068E00E31EE0F2C5007BC67A /* SF-UI-Display-Light.otf in Resources */,
+				752D179E1EE5A35100FF48C9 /* penjing.png in Resources */,
 				068E00EE1EE0F2C5007BC67A /* SF-UI-Text-Light.otf in Resources */,
 				068E00E51EE0F2C5007BC67A /* SF-UI-Display-Regular.otf in Resources */,
 				068E00DF1EE0F2C5007BC67A /* License Agreement for SF UI Font.rtf in Resources */,
@@ -1007,7 +1039,6 @@
 				0698A9821EAF53E4005B375D /* CTools.m in Sources */,
 				0698A95E1EAF2966005B375D /* UIView+Layer.m in Sources */,
 				0698A9481EAF2966005B375D /* NSData+Encrypt.m in Sources */,
-				060273A01ED7DFC300AF3707 /* CDatePickerView.m in Sources */,
 				0698A95F1EAF2966005B375D /* UIView+Nib.m in Sources */,
 				0698A9691EAF2966005B375D /* GFRegularExp.m in Sources */,
 				0698A9581EAF2966005B375D /* UIImage+Launchimage.m in Sources */,
@@ -1016,6 +1047,7 @@
 				0698A9531EAF2966005B375D /* UIButton+Highlight.m in Sources */,
 				0698A9511EAF2966005B375D /* NSString+Pinyin.m in Sources */,
 				0698A9471EAF2966005B375D /* NSData+Base64.m in Sources */,
+				751D169F1EE3DE15000A8EF1 /* CSViewController.m in Sources */,
 				0698A94B1EAF2966005B375D /* NSString+Base64.m in Sources */,
 				75F5D5C81EDC58970074BED0 /* YBPTableViewCell.m in Sources */,
 			);

@@ -7,7 +7,6 @@
 //
 
 #import "CHViewController.h"
-#import "CDatePickerView.h"
 #import "CNAddViewController.h"
 
 @interface CHViewController ()
@@ -17,8 +16,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *incomeTitleLabel;
 @property (weak, nonatomic) IBOutlet UICountingLabel *incomeMoneyLabel;
-
-@property (copy, nonatomic) UIScreenEdgePanGestureRecognizer *edgeGesture; // 侧滑手势
 
 @end
 
@@ -36,20 +33,10 @@
     [self updateUIElements];
 }
 
-- (UIScreenEdgePanGestureRecognizer *)edgeGesture {
-    if (!_edgeGesture) {
-        _edgeGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(respondsToEdgeRecognizer:)];
-        _edgeGesture.edges = UIRectEdgeLeft;
-    }
-    return _edgeGesture;
-}
-
 #pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.view addGestureRecognizer:self.edgeGesture];
     
     self.currentDate = [NSDate date];
     
@@ -130,11 +117,12 @@
 
 #pragma mark - Actions
 
-- (void)respondsToEdgeRecognizer:(UIScreenEdgePanGestureRecognizer *)recognizer {
-    NSLog(@"%@",recognizer);
+- (IBAction)menuAction:(id)sender {
+    [self performSegueWithIdentifier:@"showMenuSegue" sender:nil];
 }
 
-- (IBAction)menuAction:(id)sender {
+- (IBAction)addNewActioin:(id)sender {
+    [self performSegueWithIdentifier:@"addNewSegue" sender:nil];
 }
 
 - (void)getCurrentWave {
@@ -178,7 +166,6 @@
     CGPathRelease(pathT);
 }
 
-
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -187,39 +174,5 @@
         vc.dateArray = @[@(self.year),@(self.month),@(self.day)];
     }
 }
-
-/*
-#pragma mark - UITableViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat offsetY = scrollView.contentOffset.y;
-    if (offsetY > 55) {
-        if (self.menuButton.currentButtonType != buttonAddType) {
-            [self.menuButton animateToType:buttonAddType];
-        }
-    }else {
-        if (self.menuButton.currentButtonType == buttonAddType) {
-            [self.menuButton animateToType:buttonMenuType];
-        }
-    }
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath { return 104; }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section { return 10; }
-
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CWeatherCell *cell = [tableView dequeueReusableCellWithIdentifier:weatherIdentifer forIndexPath:indexPath];
-    cell.date = self.currentDate;
-    cell.delegate = self;
-    return cell;
-}
- */
 
 @end

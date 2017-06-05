@@ -39,7 +39,6 @@ DEPENDENCIES:
   - IQKeyboardManager
   - JVFloatLabeledTextField
   - MJExtension
-  - pop
   - ReactiveCocoa
   - UICountingLabel
   - VBFPopFlatButton
@@ -57,6 +56,6 @@ SPEC CHECKSUMS:
   VBFPopFlatButton: 39e48ab56277f3d056734a9b5ec5d0cc60d69778
   YBPopupMenu: b466cf9daa0d341ea15c5ad709247546051c4d86
 
-PODFILE CHECKSUM: af434abbaa059e277284808adde62e8c22ccb436
+PODFILE CHECKSUM: 0bb530fde27b3e6a9ea4e53aed189d0deaf001c9
 
 COCOAPODS: 1.2.1

@@ -12,7 +12,6 @@
 #import "GF_Foundation.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
-#import <pop/POP.h>
 #import <JVFloatLabeledTextField/JVFloatLabeledTextView.h>
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 #import <UICountingLabel/UICountingLabel.h>

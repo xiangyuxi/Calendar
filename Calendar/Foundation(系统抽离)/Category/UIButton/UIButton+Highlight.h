@@ -29,7 +29,7 @@ typedef NS_ENUM(NSUInteger, GFButtonState) {
 
 @interface UIButton (Deprecated)
 
-@property (nullable, nonatomic, copy) UIColor *backgroundColor GFDeprecated("使用'setBackgroundColor:forState:'代替。");
+@property (nullable, nonatomic, copy) UIColor *backgroundColor; //GFDeprecated("使用'setBackgroundColor:forState:'代替。");
 
 @end
 

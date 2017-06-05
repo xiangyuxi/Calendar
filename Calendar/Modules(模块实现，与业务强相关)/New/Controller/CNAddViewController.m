@@ -39,10 +39,6 @@
 
 #pragma mark - Actions
 
-- (IBAction)backAction:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 #pragma mark - SegmentedControlDelegate
 
 - (void)segmentControl:(SegmentControl *)segment didSelected:(NSInteger)index {
