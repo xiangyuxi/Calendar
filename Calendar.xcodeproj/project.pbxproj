@@ -77,6 +77,8 @@
 		751D169F1EE3DE15000A8EF1 /* CSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751D169E1EE3DE15000A8EF1 /* CSViewController.m */; };
 		752D179E1EE5A35100FF48C9 /* penjing.png in Resources */ = {isa = PBXBuildFile; fileRef = 752D179D1EE5A35100FF48C9 /* penjing.png */; };
 		752D17A21EE5A7D900FF48C9 /* girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 752D17A11EE5A7D900FF48C9 /* girl.png */; };
+		752D17A51EE5B46F00FF48C9 /* CSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752D17A41EE5B46F00FF48C9 /* CSectionView.m */; };
+		752D17A91EE5B6E600FF48C9 /* CSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 752D17A81EE5B6E600FF48C9 /* CSectionView.xib */; };
 		75E526691EDD7C1F0073EFFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E526681EDD7C1F0073EFFB /* Assets.xcassets */; };
 		75F5D5911EDBAE480074BED0 /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5901EDBAE480074BED0 /* UIView+Shadow.m */; };
 		75F5D5941EDBAF1A0074BED0 /* SegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5931EDBAF1A0074BED0 /* SegmentControl.m */; };
@@ -236,6 +238,9 @@
 		751D169E1EE3DE15000A8EF1 /* CSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSViewController.m; sourceTree = "<group>"; };
 		752D179D1EE5A35100FF48C9 /* penjing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penjing.png; sourceTree = "<group>"; };
 		752D17A11EE5A7D900FF48C9 /* girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl.png; sourceTree = "<group>"; };
+		752D17A31EE5B46F00FF48C9 /* CSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSectionView.h; sourceTree = "<group>"; };
+		752D17A41EE5B46F00FF48C9 /* CSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSectionView.m; sourceTree = "<group>"; };
+		752D17A81EE5B6E600FF48C9 /* CSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSectionView.xib; sourceTree = "<group>"; };
 		75E526681EDD7C1F0073EFFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75F5D58E1EDBAB510074BED0 /* SCHader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCHader.h; sourceTree = "<group>"; };
 		75F5D58F1EDBAE480074BED0 /* UIView+Shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shadow.h"; sourceTree = "<group>"; };
@@ -742,6 +747,9 @@
 		751D169C1EE3DD68000A8EF1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				752D17A31EE5B46F00FF48C9 /* CSectionView.h */,
+				752D17A41EE5B46F00FF48C9 /* CSectionView.m */,
+				752D17A81EE5B6E600FF48C9 /* CSectionView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -920,6 +928,7 @@
 				0698A8AE1EAF28B8005B375D /* Main.storyboard in Resources */,
 				068E00E91EE0F2C5007BC67A /* SF-UI-Text-Bold.otf in Resources */,
 				068E00EC1EE0F2C5007BC67A /* SF-UI-Text-HeavyItalic.otf in Resources */,
+				752D17A91EE5B6E600FF48C9 /* CSectionView.xib in Resources */,
 				068E00E31EE0F2C5007BC67A /* SF-UI-Display-Light.otf in Resources */,
 				752D179E1EE5A35100FF48C9 /* penjing.png in Resources */,
 				068E00EE1EE0F2C5007BC67A /* SF-UI-Text-Light.otf in Resources */,
@@ -1044,6 +1053,7 @@
 				0698A9581EAF2966005B375D /* UIImage+Launchimage.m in Sources */,
 				75F5D5911EDBAE480074BED0 /* UIView+Shadow.m in Sources */,
 				0698A9541EAF2966005B375D /* UIButton+ImgTitleEdge.m in Sources */,
+				752D17A51EE5B46F00FF48C9 /* CSectionView.m in Sources */,
 				0698A9531EAF2966005B375D /* UIButton+Highlight.m in Sources */,
 				0698A9511EAF2966005B375D /* NSString+Pinyin.m in Sources */,
 				0698A9471EAF2966005B375D /* NSData+Base64.m in Sources */,

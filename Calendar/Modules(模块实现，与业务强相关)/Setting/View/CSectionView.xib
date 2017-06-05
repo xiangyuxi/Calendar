@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-UI-Text-Regular.otf">
+            <string>SFUIText-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CSectionView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="penjing.png" translatesAutoresizingMaskIntoConstraints="NO" id="XCB-ah-tVh">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="srp-za-eLT" customClass="GFEffectView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl.png" translatesAutoresizingMaskIntoConstraints="NO" id="M3a-Kp-zYG">
+                            <rect key="frame" x="15" y="41" width="82.5" height="82"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="M3a-Kp-zYG" secondAttribute="height" id="aKd-GS-nMV"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="爱弹吉他的纳兰沛容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vo1-8n-ywx">
+                            <rect key="frame" x="105" y="62.5" width="144" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="rvf-MV-QZK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="woman" translatesAutoresizingMaskIntoConstraints="NO" id="PFV-x7-7wC">
+                            <rect key="frame" x="257" y="62.5" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="Al4-QD-K7i"/>
+                                <constraint firstAttribute="width" constant="20" id="Jno-fK-yS6"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设计师" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcE-Sm-0Xj">
+                            <rect key="frame" x="105" y="87.5" width="45" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="I2U-Dx-46U"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="15"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tce-Pc-SS1">
+                            <rect key="frame" x="160" y="87.5" width="0.5" height="18"/>
+                            <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="0.5" id="AFE-x1-5Bj"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrL-1k-zF9">
+                            <rect key="frame" x="170.5" y="88" width="18.5" height="18"/>
+                            <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="15"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="tce-Pc-SS1" firstAttribute="height" secondItem="rcE-Sm-0Xj" secondAttribute="height" id="8du-W5-QQa"/>
+                        <constraint firstItem="vo1-8n-ywx" firstAttribute="leading" secondItem="M3a-Kp-zYG" secondAttribute="trailing" constant="8" id="AeJ-ol-6O7"/>
+                        <constraint firstItem="M3a-Kp-zYG" firstAttribute="height" secondItem="srp-za-eLT" secondAttribute="height" multiplier="0.5" id="EvK-dM-51n"/>
+                        <constraint firstItem="lrL-1k-zF9" firstAttribute="leading" secondItem="tce-Pc-SS1" secondAttribute="trailing" constant="10" id="Tzh-bU-jda"/>
+                        <constraint firstItem="rcE-Sm-0Xj" firstAttribute="leading" secondItem="M3a-Kp-zYG" secondAttribute="trailing" constant="8" id="cbb-8h-BqW"/>
+                        <constraint firstItem="tce-Pc-SS1" firstAttribute="leading" secondItem="rcE-Sm-0Xj" secondAttribute="trailing" constant="10" id="fkX-ml-BcW"/>
+                        <constraint firstItem="vo1-8n-ywx" firstAttribute="width" relation="lessThanOrEqual" secondItem="srp-za-eLT" secondAttribute="width" multiplier="0.5" id="l0Q-bN-Q2f"/>
+                        <constraint firstItem="PFV-x7-7wC" firstAttribute="centerY" secondItem="vo1-8n-ywx" secondAttribute="centerY" id="mTn-72-IiM"/>
+                        <constraint firstItem="PFV-x7-7wC" firstAttribute="leading" secondItem="vo1-8n-ywx" secondAttribute="trailing" constant="8" id="qvC-Bc-Xw1"/>
+                        <constraint firstItem="lrL-1k-zF9" firstAttribute="centerY" secondItem="rcE-Sm-0Xj" secondAttribute="centerY" id="sPp-fv-c1T"/>
+                        <constraint firstItem="M3a-Kp-zYG" firstAttribute="leading" secondItem="srp-za-eLT" secondAttribute="leading" constant="15" id="uPg-qO-Fis"/>
+                        <constraint firstItem="rcE-Sm-0Xj" firstAttribute="top" secondItem="vo1-8n-ywx" secondAttribute="bottom" constant="5" id="uvI-vD-JvE"/>
+                        <constraint firstItem="vo1-8n-ywx" firstAttribute="centerY" secondItem="M3a-Kp-zYG" secondAttribute="centerY" constant="-10" id="wrD-Xg-1uP"/>
+                        <constraint firstItem="M3a-Kp-zYG" firstAttribute="centerY" secondItem="srp-za-eLT" secondAttribute="centerY" id="xhc-aS-TkN"/>
+                        <constraint firstItem="tce-Pc-SS1" firstAttribute="centerY" secondItem="rcE-Sm-0Xj" secondAttribute="centerY" id="zKN-1O-l93"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="translucent" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="srp-za-eLT" secondAttribute="bottom" id="KDJ-my-f2s"/>
+                <constraint firstItem="srp-za-eLT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OPT-8j-sQG"/>
+                <constraint firstAttribute="trailing" secondItem="srp-za-eLT" secondAttribute="trailing" id="UZR-cI-YDy"/>
+                <constraint firstAttribute="trailing" secondItem="XCB-ah-tVh" secondAttribute="trailing" id="foG-l8-SFk"/>
+                <constraint firstItem="XCB-ah-tVh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qnC-Lw-Ig7"/>
+                <constraint firstItem="srp-za-eLT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="r81-i7-yyO"/>
+                <constraint firstAttribute="bottom" secondItem="XCB-ah-tVh" secondAttribute="bottom" id="vSn-qH-VIr"/>
+                <constraint firstItem="XCB-ah-tVh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="x9D-Za-Qq2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="headerImageView" destination="M3a-Kp-zYG" id="zcg-d6-5Zk"/>
+                <outlet property="userAgeLabel" destination="lrL-1k-zF9" id="JXf-Yt-gx5"/>
+                <outlet property="userNameLabel" destination="vo1-8n-ywx" id="HKe-5y-Vhk"/>
+                <outlet property="userSexImageView" destination="PFV-x7-7wC" id="tIc-Ki-kjq"/>
+                <outlet property="userWorkLabel" destination="rcE-Sm-0Xj" id="aja-Hj-KcT"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="girl.png" width="200" height="200"/>
+        <image name="penjing.png" width="647" height="403"/>
+        <image name="woman" width="20" height="20"/>
+    </resources>
+</document>

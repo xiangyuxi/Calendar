@@ -7,6 +7,7 @@
 //
 
 #import "CSViewController.h"
+#import "CSectionView.h"
 
 @interface CSViewController ()
 
@@ -16,11 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *userSexImageView;
-@property (weak, nonatomic) IBOutlet UILabel *userWorkLabel;
-@property (weak, nonatomic) IBOutlet UILabel *userAgeLabel;
+@property (strong, nonatomic) CSectionView *sectionView;
 
 @end
 
@@ -28,16 +25,24 @@
 
 #pragma mark - Properties
 
+- (CSectionView *)sectionView {
+    if (!_sectionView) {
+        _sectionView = [CSectionView loadInstanceFromNib];
+        _sectionView.frame = CGRectMake(0, -kScrWidth * 164 / 375, kScrWidth,kScrWidth * 164 / 375);
+        [self.tableView addSubview:_sectionView];
+    }
+    return _sectionView;
+}
+
 #pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.contentInset = UIEdgeInsetsMake(CGRectGetHeight(self.sectionView.frame), 0, 0, 0);
+    
     self.imageNames = @[@[@"changeUserInfo"],@[@"aboutUs",@"payForMe"],@[@"share",@"clear"],@[@"goOut"]];
     self.cellTitles = @[@[@"修改个人资料"],@[@"关于开发者",@"打赏开发者"],@[@"推荐App给好友",@"清除缓存"],@[@"退出登录"]];
-    
-    self.headerImageView.clipsToBounds = YES;
-    self.headerImageView.cornerRadius = kScrWidth * 164 / 375 / 4;
 }
 
 #pragma mark - Private
