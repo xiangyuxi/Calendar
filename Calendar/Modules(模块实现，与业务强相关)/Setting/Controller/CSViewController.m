@@ -47,7 +47,25 @@
 
 #pragma mark - Private
 
+#pragma mark - Actions
+
+- (IBAction)cancelToBackAction:(id)sender {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 #pragma mark - UITableViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat offsetY = scrollView.contentOffset.y + kScrWidth * 164 / 375;
+    CGFloat height = kScrWidth * 164 / 375;
+    if (offsetY <= 0) {
+        height -= offsetY;
+    }
+    _sectionView.frame = CGRectMake(0, offsetY-kScrWidth * 164 / 375, kScrWidth,height);
+
+    NSLog(@"%f",offsetY);
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section { return 0.0001f; }
 
