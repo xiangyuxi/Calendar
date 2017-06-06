@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dN6-Th-Pmz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dN6-Th-Pmz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -147,11 +147,136 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="tky-oJ-FKh" id="WX4-pe-usP"/>
+                        <segue destination="3mr-EU-69g" kind="show" identifier="aboutUsSegue" id="Ccu-Wv-ggA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dqs-Oy-ewB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2880.8000000000002" y="1555.7721139430287"/>
+        </scene>
+        <!--关于我-->
+        <scene sceneID="Ol8-6d-apM">
+            <objects>
+                <tableViewController id="3mr-EU-69g" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" id="VOk-ts-HOJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="yPi-7i-mHG">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="345"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="致使用Go的用户：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9E-Vt-Ei1">
+                                    <rect key="frame" x="15" y="15" width="117" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="17" id="c3B-pt-ni4"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="14"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezx-5j-hQ3">
+                                    <rect key="frame" x="47" y="40" width="313" height="284.5"/>
+                                    <mutableString key="text">感谢您使用“Go”。在使用过程中有什么需要改进的或哪里不够人性化的，您可以同过邮箱联系我。
+我通过自己日常生活发现，我对自己没有很好的约束能力，每月工资不少，但过得依然紧巴巴的，时至今日，手中还无存款。看着疯涨的房价，我不禁感到压力山大，我怎么才能勤俭持家呢？“Go”就这样诞生了。
+“Go”起源于日常生活，且致力于改善花钱大手大脚的陋习。在1.0.0版本的“Go”中，你可以新建每日账单，记录收支情况，查看往月记录。通过数据统计，你可以分析原因，进一步的知道自己的“问题”。
+当然不足之处还是十分明显的。我无法获取到通过某宝和某信支付的数据，在记录收支时，无法自动录入，对恒心是一份十分大的挑战。
+再次感谢您使用“Go”，我必将利用工作之余，维护这款软件，如能造福广大群众，实属我的荣幸。</mutableString>
+                                    <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="14"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="ezx-5j-hQ3" firstAttribute="top" secondItem="a9E-Vt-Ei1" secondAttribute="bottom" constant="8" id="N8M-JF-4S5"/>
+                                <constraint firstItem="a9E-Vt-Ei1" firstAttribute="leading" secondItem="yPi-7i-mHG" secondAttribute="leading" constant="15" id="NQJ-91-sQE"/>
+                                <constraint firstItem="a9E-Vt-Ei1" firstAttribute="top" secondItem="yPi-7i-mHG" secondAttribute="top" constant="15" id="OaR-1h-oCe"/>
+                                <constraint firstAttribute="trailing" secondItem="ezx-5j-hQ3" secondAttribute="trailing" constant="15" id="R0A-iW-2gZ"/>
+                                <constraint firstItem="ezx-5j-hQ3" firstAttribute="leading" secondItem="yPi-7i-mHG" secondAttribute="leading" constant="47" id="VxR-9g-MsT"/>
+                            </constraints>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="b5t-7l-X5X">
+                            <rect key="frame" x="0.0" y="434" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版本：v1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flr-bJ-25x">
+                                    <rect key="frame" x="148" y="14" width="80" height="17"/>
+                                    <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="14"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="flr-bJ-25x" firstAttribute="centerY" secondItem="b5t-7l-X5X" secondAttribute="centerY" id="qi8-rG-g1R"/>
+                                <constraint firstItem="flr-bJ-25x" firstAttribute="centerX" secondItem="b5t-7l-X5X" secondAttribute="centerX" id="qzv-FM-dfH"/>
+                            </constraints>
+                        </view>
+                        <sections>
+                            <tableViewSection id="6KZ-2P-FPT">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="sbL-IK-Wa9" detailTextLabel="Vuy-0v-48s" style="IBUITableViewCellStyleValue1" id="GG0-PV-hL4">
+                                        <rect key="frame" x="0.0" y="345" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GG0-PV-hL4" id="mD0-TD-7Jm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="作者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sbL-IK-Wa9">
+                                                    <rect key="frame" x="15" y="14" width="28" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="yxiang" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vuy-0v-48s">
+                                                    <rect key="frame" x="317" y="14" width="43" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="GRh-nX-HHH" detailTextLabel="b1v-uI-xey" style="IBUITableViewCellStyleValue1" id="SsM-Ip-gi8">
+                                        <rect key="frame" x="0.0" y="389" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SsM-Ip-gi8" id="FKc-PX-Vi6">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="联系方式" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GRh-nX-HHH">
+                                                    <rect key="frame" x="15" y="14" width="56" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1016785979@qq.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b1v-uI-xey">
+                                                    <rect key="frame" x="216" y="14" width="144" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="3mr-EU-69g" id="BEW-eG-REC"/>
+                            <outlet property="delegate" destination="3mr-EU-69g" id="G4T-wU-TPw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="关于我" id="PFr-iV-eJa"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SjK-xI-eav" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3853.5999999999999" y="1555.7721139430287"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="FLf-mO-uf7">

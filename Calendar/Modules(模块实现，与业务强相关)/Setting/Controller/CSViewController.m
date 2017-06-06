@@ -42,7 +42,7 @@
     self.tableView.contentInset = UIEdgeInsetsMake(CGRectGetHeight(self.sectionView.frame), 0, 0, 0);
     
     self.imageNames = @[@[@"changeUserInfo"],@[@"aboutUs",@"payForMe"],@[@"share",@"clear"],@[@"goOut"]];
-    self.cellTitles = @[@[@"修改个人资料"],@[@"关于开发者",@"打赏开发者"],@[@"推荐App给好友",@"清除缓存"],@[@"退出登录"]];
+    self.cellTitles = @[@[@"修改个人资料"],@[@"关于我",@"打赏开发者"],@[@"推荐App给好友",@"清除缓存"],@[@"退出登录"]];
 }
 
 #pragma mark - Private
@@ -63,14 +63,15 @@
         height -= offsetY;
     }
     _sectionView.frame = CGRectMake(0, offsetY-kScrWidth * 164 / 375, kScrWidth,height);
-
-    NSLog(@"%f",offsetY);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section { return 0.0001f; }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 1 && indexPath.row == 0) {
+        [self performSegueWithIdentifier:@"aboutUsSegue" sender:nil];
+    }
 }
 
 #pragma mark - UITableViewDataSource

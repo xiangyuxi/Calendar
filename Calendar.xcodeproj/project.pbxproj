@@ -68,7 +68,6 @@
 		0698A9641EAF2966005B375D /* GFDeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A92F1EAF2966005B375D /* GFDeviceUtil.m */; };
 		0698A9651EAF2966005B375D /* GFObjcRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A9311EAF2966005B375D /* GFObjcRuntime.m */; };
 		0698A9671EAF2966005B375D /* GFEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A9401EAF2966005B375D /* GFEffectView.m */; };
-		0698A9681EAF2966005B375D /* GFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A9431EAF2966005B375D /* GFModel.m */; };
 		0698A9691EAF2966005B375D /* GFRegularExp.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A9461EAF2966005B375D /* GFRegularExp.m */; };
 		0698A9821EAF53E4005B375D /* CTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698A9811EAF53E4005B375D /* CTools.m */; };
 		069E79BD1EE00B2400D3161E /* CBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 069E79BC1EE00B2400D3161E /* CBaseViewController.m */; };
@@ -223,8 +222,6 @@
 		0698A93D1EAF2966005B375D /* GF_Vendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GF_Vendor.h; sourceTree = "<group>"; };
 		0698A93F1EAF2966005B375D /* GFEffectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFEffectView.h; sourceTree = "<group>"; };
 		0698A9401EAF2966005B375D /* GFEffectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFEffectView.m; sourceTree = "<group>"; };
-		0698A9421EAF2966005B375D /* GFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFModel.h; sourceTree = "<group>"; };
-		0698A9431EAF2966005B375D /* GFModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFModel.m; sourceTree = "<group>"; };
 		0698A9451EAF2966005B375D /* GFRegularExp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFRegularExp.h; sourceTree = "<group>"; };
 		0698A9461EAF2966005B375D /* GFRegularExp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFRegularExp.m; sourceTree = "<group>"; };
 		0698A9731EAF307C005B375D /* Calendar_pch.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Calendar_pch.pch; sourceTree = "<group>"; };
@@ -658,7 +655,6 @@
 				0698A93D1EAF2966005B375D /* GF_Vendor.h */,
 				75F5D58D1EDBAADE0074BED0 /* SegmentControl */,
 				0698A93E1EAF2966005B375D /* GFEffectView */,
-				0698A9411EAF2966005B375D /* GFModel */,
 				0698A9441EAF2966005B375D /* GFRegularExp */,
 			);
 			path = "Vendor(第三方、自定义与业务无关组件等)";
@@ -671,15 +667,6 @@
 				0698A9401EAF2966005B375D /* GFEffectView.m */,
 			);
 			path = GFEffectView;
-			sourceTree = "<group>";
-		};
-		0698A9411EAF2966005B375D /* GFModel */ = {
-			isa = PBXGroup;
-			children = (
-				0698A9421EAF2966005B375D /* GFModel.h */,
-				0698A9431EAF2966005B375D /* GFModel.m */,
-			);
-			path = GFModel;
 			sourceTree = "<group>";
 		};
 		0698A9441EAF2966005B375D /* GFRegularExp */ = {
@@ -1036,7 +1023,6 @@
 				0698A94A1EAF2966005B375D /* NSNumber+Moeny.m in Sources */,
 				0698A94D1EAF2966005B375D /* NSString+Date.m in Sources */,
 				0698A9621EAF2966005B375D /* GF_Tools.m in Sources */,
-				0698A9681EAF2966005B375D /* GFModel.m in Sources */,
 				0698A9611EAF2966005B375D /* UIViewController+LifeCycleCalled.m in Sources */,
 				0698A9651EAF2966005B375D /* GFObjcRuntime.m in Sources */,
 				0698A9501EAF2966005B375D /* NSString+MD5.m in Sources */,

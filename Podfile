@@ -1,13 +1,9 @@
 platform :ios, '7.0'
 
 target “Calendar” do
-	pod 'AFNetworking'
  	pod 'ReactiveCocoa'
-	pod 'FMDB'
-	pod 'MJExtension'
-    pod 'IQKeyboardManager'
-    pod 'JVFloatLabeledTextField'
-    pod 'VBFPopFlatButton'
+   	pod 'IQKeyboardManager'
+   	pod 'JVFloatLabeledTextField'
     pod 'YBPopupMenu'
     pod 'UICountingLabel'
 end
