@@ -8,18 +8,25 @@
 
 #import "CNAddViewController.h"
 #import "SegmentControl.h"
-#import "CNACollectionViewCell.h"
-#import "CNAFlowLayout.h"
-#import "YBPopupMenu.h"
-#import "YBPTableViewCell.h"
+#import "CNIncomeView.h"
 
-@interface CNAddViewController () <SegmentedControlDelegate/*, UICollectionViewDelegate, UICollectionViewDataSource, YBPopupMenuDelegate*/>
+@interface CNAddViewController () <SegmentedControlDelegate>
+
+@property (strong, nonatomic) CNIncomeView *incomeView;
 
 @end
 
 @implementation CNAddViewController
 
-// static NSString *kPayTypeCellIdentifier = @"addTypeCell";
+#pragma mark - Properties
+
+- (CNIncomeView *)incomeView {
+    if (!_incomeView) {
+        _incomeView = [CNIncomeView loadInstanceFromNib];
+        _incomeView.frame = CGRectMake(0, 64, kScrWidth, kScrHeight-64-20-50-10);
+    }
+    return _incomeView;
+}
 
 #pragma mark - Lifecycle
 
@@ -35,6 +42,8 @@
     sc.delegate = self;
     self.navigationItem.titleView = sc;
     
+    [self.view addSubview:self.incomeView];
+    
 }
 
 #pragma mark - Actions
@@ -43,28 +52,10 @@
 
 - (void)segmentControl:(SegmentControl *)segment didSelected:(NSInteger)index {
     NSLog(@"%ld",index);
+    [self.view endEditing:YES];
 }
 
 /*
-#pragma mark - YBPopupMenuDelegate
-
-- (void)ybPopupMenuDidSelectedAtIndex:(NSInteger)index ybPopupMenu:(YBPopupMenu *)ybPopupMenu {
-    [self.payTypeButton setImage:[UIImage imageNamed:self.payTypeArray[index]] forState:UIControlStateNormal];
-}
-
-- (void)ybPopupMenuBeganDismiss {
-    [UIView animateWithDuration:0.3 animations:^{
-        self.arrowImageView.transform = CGAffineTransformIdentity;
-    }];
-}
-
-- (UITableViewCell *)ybPopupMenuWithTableView:(UITableView *)tableView image:(UIImage *)image title:(NSString *)title {
-    YBPTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YBPTableViewCell"];
-    cell.imageView.image = image;
-    cell.titleLabel.text = title;
-    return cell;
-}
-
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

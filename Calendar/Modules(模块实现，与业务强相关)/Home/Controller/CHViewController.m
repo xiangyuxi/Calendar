@@ -52,6 +52,10 @@
     [self.view bringSubviewToFront:self.incomeMoneyLabel];
     
     [self makeShowMoreButtonShadow];
+    
+    [[self.showMoreButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        [self performSegueWithIdentifier:@"showDetailSegue" sender:nil];
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

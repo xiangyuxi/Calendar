@@ -73,18 +73,19 @@
 		069E79BD1EE00B2400D3161E /* CBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 069E79BC1EE00B2400D3161E /* CBaseViewController.m */; };
 		26A5F09D7F9C0F44FABE6083 /* libPods-Calendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A76919E0E6A743EA9A81F7 /* libPods-Calendar.a */; };
 		751068111EDC6F5D00F4F21C /* CNAFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 751068101EDC6F5D00F4F21C /* CNAFlowLayout.m */; };
+		7517987D1EE6F3D200259E0E /* CShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7517987C1EE6F3D200259E0E /* CShowViewController.m */; };
 		751D169F1EE3DE15000A8EF1 /* CSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751D169E1EE3DE15000A8EF1 /* CSViewController.m */; };
 		752D179E1EE5A35100FF48C9 /* penjing.png in Resources */ = {isa = PBXBuildFile; fileRef = 752D179D1EE5A35100FF48C9 /* penjing.png */; };
 		752D17A21EE5A7D900FF48C9 /* girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 752D17A11EE5A7D900FF48C9 /* girl.png */; };
 		752D17A51EE5B46F00FF48C9 /* CSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752D17A41EE5B46F00FF48C9 /* CSectionView.m */; };
 		752D17A91EE5B6E600FF48C9 /* CSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 752D17A81EE5B6E600FF48C9 /* CSectionView.xib */; };
+		754C79231EE6F7B8008426BB /* CNIncomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 754C79221EE6F7B8008426BB /* CNIncomeView.m */; };
+		754C79251EE6F7C2008426BB /* CNIncomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 754C79241EE6F7C2008426BB /* CNIncomeView.xib */; };
 		75E526691EDD7C1F0073EFFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E526681EDD7C1F0073EFFB /* Assets.xcassets */; };
 		75F5D5911EDBAE480074BED0 /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5901EDBAE480074BED0 /* UIView+Shadow.m */; };
 		75F5D5941EDBAF1A0074BED0 /* SegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5931EDBAF1A0074BED0 /* SegmentControl.m */; };
 		75F5D5971EDBC6960074BED0 /* CNAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5961EDBC6960074BED0 /* CNAddViewController.m */; };
 		75F5D5A21EDC1E9C0074BED0 /* CNACollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5A11EDC1E9C0074BED0 /* CNACollectionViewCell.m */; };
-		75F5D5C81EDC58970074BED0 /* YBPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5C61EDC58970074BED0 /* YBPTableViewCell.m */; };
-		75F5D5C91EDC58970074BED0 /* YBPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75F5D5C71EDC58970074BED0 /* YBPTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,6 +232,8 @@
 		069E79BC1EE00B2400D3161E /* CBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBaseViewController.m; sourceTree = "<group>"; };
 		7510680F1EDC6F5D00F4F21C /* CNAFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNAFlowLayout.h; sourceTree = "<group>"; };
 		751068101EDC6F5D00F4F21C /* CNAFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNAFlowLayout.m; sourceTree = "<group>"; };
+		7517987B1EE6F3D200259E0E /* CShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CShowViewController.h; sourceTree = "<group>"; };
+		7517987C1EE6F3D200259E0E /* CShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CShowViewController.m; sourceTree = "<group>"; };
 		751D169D1EE3DE15000A8EF1 /* CSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSViewController.h; sourceTree = "<group>"; };
 		751D169E1EE3DE15000A8EF1 /* CSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSViewController.m; sourceTree = "<group>"; };
 		752D179D1EE5A35100FF48C9 /* penjing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penjing.png; sourceTree = "<group>"; };
@@ -238,6 +241,9 @@
 		752D17A31EE5B46F00FF48C9 /* CSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSectionView.h; sourceTree = "<group>"; };
 		752D17A41EE5B46F00FF48C9 /* CSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSectionView.m; sourceTree = "<group>"; };
 		752D17A81EE5B6E600FF48C9 /* CSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSectionView.xib; sourceTree = "<group>"; };
+		754C79211EE6F7B8008426BB /* CNIncomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNIncomeView.h; sourceTree = "<group>"; };
+		754C79221EE6F7B8008426BB /* CNIncomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNIncomeView.m; sourceTree = "<group>"; };
+		754C79241EE6F7C2008426BB /* CNIncomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CNIncomeView.xib; sourceTree = "<group>"; };
 		75E526681EDD7C1F0073EFFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75F5D58E1EDBAB510074BED0 /* SCHader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCHader.h; sourceTree = "<group>"; };
 		75F5D58F1EDBAE480074BED0 /* UIView+Shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shadow.h"; sourceTree = "<group>"; };
@@ -248,9 +254,6 @@
 		75F5D5961EDBC6960074BED0 /* CNAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNAddViewController.m; sourceTree = "<group>"; };
 		75F5D5A01EDC1E9C0074BED0 /* CNACollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNACollectionViewCell.h; sourceTree = "<group>"; };
 		75F5D5A11EDC1E9C0074BED0 /* CNACollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNACollectionViewCell.m; sourceTree = "<group>"; };
-		75F5D5C51EDC58970074BED0 /* YBPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPTableViewCell.h; sourceTree = "<group>"; };
-		75F5D5C61EDC58970074BED0 /* YBPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPTableViewCell.m; sourceTree = "<group>"; };
-		75F5D5C71EDC58970074BED0 /* YBPTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBPTableViewCell.xib; sourceTree = "<group>"; };
 		806443068E05BACF2A19C074 /* Pods-Calendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Calendar/Pods-Calendar.debug.xcconfig"; sourceTree = "<group>"; };
 		82A76919E0E6A743EA9A81F7 /* libPods-Calendar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Calendar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58A1B76C4959B23D27C572D /* Pods-Calendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Calendar/Pods-Calendar.release.xcconfig"; sourceTree = "<group>"; };
@@ -304,11 +307,11 @@
 		0670AA481EC1A71500472EB7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				75F5D5C51EDC58970074BED0 /* YBPTableViewCell.h */,
-				75F5D5C61EDC58970074BED0 /* YBPTableViewCell.m */,
-				75F5D5C71EDC58970074BED0 /* YBPTableViewCell.xib */,
 				75F5D5A01EDC1E9C0074BED0 /* CNACollectionViewCell.h */,
 				75F5D5A11EDC1E9C0074BED0 /* CNACollectionViewCell.m */,
+				754C79211EE6F7B8008426BB /* CNIncomeView.h */,
+				754C79221EE6F7B8008426BB /* CNIncomeView.m */,
+				754C79241EE6F7C2008426BB /* CNIncomeView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -640,8 +643,9 @@
 		0698A9371EAF2966005B375D /* Modules(模块实现，与业务强相关) */ = {
 			isa = PBXGroup;
 			children = (
-				751D16991EE3DD68000A8EF1 /* Setting */,
 				069E79BA1EE004D700D3161E /* Base */,
+				751798771EE6F3AC00259E0E /* Show */,
+				751D16991EE3DD68000A8EF1 /* Setting */,
 				0670AA451EC1A6FD00472EB7 /* New */,
 				068E03001EB9B2DF0001754B /* Home */,
 				0698A97F1EAF53D9005B375D /* Tools */,
@@ -703,6 +707,39 @@
 				751068101EDC6F5D00F4F21C /* CNAFlowLayout.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		751798771EE6F3AC00259E0E /* Show */ = {
+			isa = PBXGroup;
+			children = (
+				751798791EE6F3AC00259E0E /* Model */,
+				7517987A1EE6F3AC00259E0E /* View */,
+				751798781EE6F3AC00259E0E /* Controller */,
+			);
+			path = Show;
+			sourceTree = "<group>";
+		};
+		751798781EE6F3AC00259E0E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7517987B1EE6F3D200259E0E /* CShowViewController.h */,
+				7517987C1EE6F3D200259E0E /* CShowViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		751798791EE6F3AC00259E0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7517987A1EE6F3AC00259E0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		751D16991EE3DD68000A8EF1 /* Setting */ = {
@@ -922,11 +959,11 @@
 				068E00E51EE0F2C5007BC67A /* SF-UI-Display-Regular.otf in Resources */,
 				068E00DF1EE0F2C5007BC67A /* License Agreement for SF UI Font.rtf in Resources */,
 				75E526691EDD7C1F0073EFFB /* Assets.xcassets in Resources */,
-				75F5D5C91EDC58970074BED0 /* YBPTableViewCell.xib in Resources */,
 				068E00E11EE0F2C5007BC67A /* SF-UI-Display-Bold.otf in Resources */,
 				068E00EA1EE0F2C5007BC67A /* SF-UI-Text-BoldItalic.otf in Resources */,
 				068E00F11EE0F2C5007BC67A /* SF-UI-Text-MediumItalic.otf in Resources */,
 				068E00F21EE0F2C5007BC67A /* SF-UI-Text-Regular.otf in Resources */,
+				754C79251EE6F7C2008426BB /* CNIncomeView.xib in Resources */,
 				068E00E01EE0F2C5007BC67A /* SF-UI-Display-Black.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1016,6 +1053,7 @@
 				0698A94E1EAF2966005B375D /* NSString+Encrypt.m in Sources */,
 				75F5D5A21EDC1E9C0074BED0 /* CNACollectionViewCell.m in Sources */,
 				069E79BD1EE00B2400D3161E /* CBaseViewController.m in Sources */,
+				754C79231EE6F7B8008426BB /* CNIncomeView.m in Sources */,
 				0698A95D1EAF2966005B375D /* UIView+Frame.m in Sources */,
 				0698A9521EAF2966005B375D /* NSString+Size.m in Sources */,
 				0698A95C1EAF2966005B375D /* UITextField+Placeholder.m in Sources */,
@@ -1036,6 +1074,7 @@
 				0698A9481EAF2966005B375D /* NSData+Encrypt.m in Sources */,
 				0698A95F1EAF2966005B375D /* UIView+Nib.m in Sources */,
 				0698A9691EAF2966005B375D /* GFRegularExp.m in Sources */,
+				7517987D1EE6F3D200259E0E /* CShowViewController.m in Sources */,
 				0698A9581EAF2966005B375D /* UIImage+Launchimage.m in Sources */,
 				75F5D5911EDBAE480074BED0 /* UIView+Shadow.m in Sources */,
 				0698A9541EAF2966005B375D /* UIButton+ImgTitleEdge.m in Sources */,
@@ -1045,7 +1084,6 @@
 				0698A9471EAF2966005B375D /* NSData+Base64.m in Sources */,
 				751D169F1EE3DE15000A8EF1 /* CSViewController.m in Sources */,
 				0698A94B1EAF2966005B375D /* NSString+Base64.m in Sources */,
-				75F5D5C81EDC58970074BED0 /* YBPTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

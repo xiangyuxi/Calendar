@@ -28,7 +28,7 @@
 - (void)setIsSelected:(BOOL)isSelected {
     _isSelected = isSelected;
     if (_isSelected) {
-        self.backgroundColor = [UIColor colorWithHex:0x1580E2];
+        self.backgroundColor = [UIColor colorWithHex:0x459BFF];
         self.titleLabel.textColor = [UIColor whiteColor];
     }else {
         self.backgroundColor = [UIColor whiteColor];

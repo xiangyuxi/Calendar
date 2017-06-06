@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-UI-Text-Regular.otf">
+            <string>SFUIText-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CNIncomeView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCY-kH-CDx">
+                    <rect key="frame" x="10" y="20" width="355" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUW-ba-mGu">
+                            <rect key="frame" x="8" y="13" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="25" id="7vG-3J-Qhv"/>
+                                <constraint firstAttribute="height" constant="25" id="Ghr-wu-O0i"/>
+                            </constraints>
+                            <state key="normal" image="现金"/>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="下" translatesAutoresizingMaskIntoConstraints="NO" id="rou-hb-0jK">
+                            <rect key="frame" x="35" y="19" width="15" height="12"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="15" id="BnD-Ac-v6m"/>
+                                <constraint firstAttribute="height" constant="12" id="qSs-XK-Bzp"/>
+                            </constraints>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入金额" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cXr-aw-ZIZ">
+                            <rect key="frame" x="65" y="0.0" width="275" height="50"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="18"/>
+                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="cXr-aw-ZIZ" firstAttribute="leading" secondItem="rou-hb-0jK" secondAttribute="trailing" constant="15" id="8O5-U2-ZMG"/>
+                        <constraint firstItem="jUW-ba-mGu" firstAttribute="centerY" secondItem="yCY-kH-CDx" secondAttribute="centerY" id="8zM-gu-dbC"/>
+                        <constraint firstAttribute="trailing" secondItem="cXr-aw-ZIZ" secondAttribute="trailing" constant="15" id="9zK-OR-xkV"/>
+                        <constraint firstItem="rou-hb-0jK" firstAttribute="centerY" secondItem="yCY-kH-CDx" secondAttribute="centerY" id="AKi-7v-ttQ"/>
+                        <constraint firstAttribute="bottom" secondItem="cXr-aw-ZIZ" secondAttribute="bottom" id="NmK-Ok-yxv"/>
+                        <constraint firstItem="cXr-aw-ZIZ" firstAttribute="top" secondItem="yCY-kH-CDx" secondAttribute="top" id="T8G-6w-Ye2"/>
+                        <constraint firstAttribute="height" constant="50" id="gc4-3e-u4z"/>
+                        <constraint firstItem="jUW-ba-mGu" firstAttribute="leading" secondItem="yCY-kH-CDx" secondAttribute="leading" constant="8" id="lBM-2d-0fR"/>
+                        <constraint firstItem="rou-hb-0jK" firstAttribute="leading" secondItem="jUW-ba-mGu" secondAttribute="trailing" constant="2" id="zwa-Dl-paf"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="yCY-kH-CDx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="4Rw-tV-1Eb"/>
+                <constraint firstItem="yCY-kH-CDx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="8qU-BZ-Wk3"/>
+                <constraint firstAttribute="trailing" secondItem="yCY-kH-CDx" secondAttribute="trailing" constant="10" id="uTc-J3-6tb"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="downImageView" destination="rou-hb-0jK" id="Sq3-be-mO2"/>
+                <outlet property="moneyInputView" destination="yCY-kH-CDx" id="vNT-hh-M6j"/>
+                <outlet property="textField" destination="cXr-aw-ZIZ" id="PlA-Kf-bca"/>
+                <outlet property="typeButton" destination="jUW-ba-mGu" id="M2a-mW-afX"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="下" width="16" height="16"/>
+        <image name="现金" width="20" height="20"/>
+    </resources>
+</document>
