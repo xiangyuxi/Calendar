@@ -1,15 +1,14 @@
 //
-//  CNACollectionViewCell.m
+//  CNIncomeCell.m
 //  Calendar
 //
-//  Created by xiangyuxi on 2017/5/29.
+//  Created by xiangyuxi on 2017/6/7.
 //  Copyright © 2017年 xyx. All rights reserved.
 //
 
-#import "CNACollectionViewCell.h"
+#import "CNIncomeCell.h"
 
-@implementation CNACollectionViewCell
-
+@implementation CNIncomeCell
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.contentView.clipsToBounds =
@@ -22,7 +21,7 @@
     self.layer.cornerRadius = 4.f;
     self.layer.shadowColor = [UIColor lightGrayColor].CGColor;
     self.layer.shadowOpacity = 0.6;
-    self.layer.shadowOffset = CGSizeMake(0, 7);
+    self.layer.shadowOffset = CGSizeMake(0, 5);
 }
 
 - (void)setIsSelected:(BOOL)isSelected {

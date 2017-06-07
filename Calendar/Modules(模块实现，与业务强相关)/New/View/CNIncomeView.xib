@@ -58,17 +58,34 @@
                         <constraint firstItem="rou-hb-0jK" firstAttribute="leading" secondItem="jUW-ba-mGu" secondAttribute="trailing" constant="2" id="zwa-Dl-paf"/>
                     </constraints>
                 </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Yjc-ik-Aze">
+                    <rect key="frame" x="0.0" y="95" width="375" height="80"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="Bnz-Qv-zt7"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iQj-W7-UXG">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="yCY-kH-CDx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="4Rw-tV-1Eb"/>
                 <constraint firstItem="yCY-kH-CDx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="8qU-BZ-Wk3"/>
+                <constraint firstAttribute="trailing" secondItem="Yjc-ik-Aze" secondAttribute="trailing" id="MKr-C3-7Sv"/>
+                <constraint firstItem="Yjc-ik-Aze" firstAttribute="top" secondItem="yCY-kH-CDx" secondAttribute="bottom" constant="25" id="UIi-Q9-g16"/>
+                <constraint firstItem="Yjc-ik-Aze" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aFk-S6-4Ht"/>
                 <constraint firstAttribute="trailing" secondItem="yCY-kH-CDx" secondAttribute="trailing" constant="10" id="uTc-J3-6tb"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="collectionView" destination="Yjc-ik-Aze" id="Nd9-ZD-Ud5"/>
                 <outlet property="downImageView" destination="rou-hb-0jK" id="Sq3-be-mO2"/>
                 <outlet property="moneyInputView" destination="yCY-kH-CDx" id="vNT-hh-M6j"/>
                 <outlet property="textField" destination="cXr-aw-ZIZ" id="PlA-Kf-bca"/>

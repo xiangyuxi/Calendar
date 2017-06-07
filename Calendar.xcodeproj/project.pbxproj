@@ -85,7 +85,8 @@
 		75F5D5911EDBAE480074BED0 /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5901EDBAE480074BED0 /* UIView+Shadow.m */; };
 		75F5D5941EDBAF1A0074BED0 /* SegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5931EDBAF1A0074BED0 /* SegmentControl.m */; };
 		75F5D5971EDBC6960074BED0 /* CNAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5961EDBC6960074BED0 /* CNAddViewController.m */; };
-		75F5D5A21EDC1E9C0074BED0 /* CNACollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F5D5A11EDC1E9C0074BED0 /* CNACollectionViewCell.m */; };
+		75F87A481EE84FC700942208 /* CNIncomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F87A461EE84FC700942208 /* CNIncomeCell.m */; };
+		75F87A491EE84FC700942208 /* CNIncomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75F87A471EE84FC700942208 /* CNIncomeCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -252,8 +253,9 @@
 		75F5D5931EDBAF1A0074BED0 /* SegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentControl.m; sourceTree = "<group>"; };
 		75F5D5951EDBC6960074BED0 /* CNAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNAddViewController.h; sourceTree = "<group>"; };
 		75F5D5961EDBC6960074BED0 /* CNAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNAddViewController.m; sourceTree = "<group>"; };
-		75F5D5A01EDC1E9C0074BED0 /* CNACollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNACollectionViewCell.h; sourceTree = "<group>"; };
-		75F5D5A11EDC1E9C0074BED0 /* CNACollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNACollectionViewCell.m; sourceTree = "<group>"; };
+		75F87A451EE84FC700942208 /* CNIncomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNIncomeCell.h; sourceTree = "<group>"; };
+		75F87A461EE84FC700942208 /* CNIncomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNIncomeCell.m; sourceTree = "<group>"; };
+		75F87A471EE84FC700942208 /* CNIncomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CNIncomeCell.xib; sourceTree = "<group>"; };
 		806443068E05BACF2A19C074 /* Pods-Calendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Calendar/Pods-Calendar.debug.xcconfig"; sourceTree = "<group>"; };
 		82A76919E0E6A743EA9A81F7 /* libPods-Calendar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Calendar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58A1B76C4959B23D27C572D /* Pods-Calendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Calendar/Pods-Calendar.release.xcconfig"; sourceTree = "<group>"; };
@@ -307,8 +309,9 @@
 		0670AA481EC1A71500472EB7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				75F5D5A01EDC1E9C0074BED0 /* CNACollectionViewCell.h */,
-				75F5D5A11EDC1E9C0074BED0 /* CNACollectionViewCell.m */,
+				75F87A451EE84FC700942208 /* CNIncomeCell.h */,
+				75F87A461EE84FC700942208 /* CNIncomeCell.m */,
+				75F87A471EE84FC700942208 /* CNIncomeCell.xib */,
 				754C79211EE6F7B8008426BB /* CNIncomeView.h */,
 				754C79221EE6F7B8008426BB /* CNIncomeView.m */,
 				754C79241EE6F7C2008426BB /* CNIncomeView.xib */,
@@ -951,6 +954,7 @@
 				068E00E81EE0F2C5007BC67A /* SF-UI-Display-Ultralight.otf in Resources */,
 				0698A8AE1EAF28B8005B375D /* Main.storyboard in Resources */,
 				068E00E91EE0F2C5007BC67A /* SF-UI-Text-Bold.otf in Resources */,
+				75F87A491EE84FC700942208 /* CNIncomeCell.xib in Resources */,
 				068E00EC1EE0F2C5007BC67A /* SF-UI-Text-HeavyItalic.otf in Resources */,
 				752D17A91EE5B6E600FF48C9 /* CSectionView.xib in Resources */,
 				068E00E31EE0F2C5007BC67A /* SF-UI-Display-Light.otf in Resources */,
@@ -1051,7 +1055,6 @@
 				0698A8A81EAF28B8005B375D /* AppDelegate.m in Sources */,
 				0698A8A51EAF28B8005B375D /* main.m in Sources */,
 				0698A94E1EAF2966005B375D /* NSString+Encrypt.m in Sources */,
-				75F5D5A21EDC1E9C0074BED0 /* CNACollectionViewCell.m in Sources */,
 				069E79BD1EE00B2400D3161E /* CBaseViewController.m in Sources */,
 				754C79231EE6F7B8008426BB /* CNIncomeView.m in Sources */,
 				0698A95D1EAF2966005B375D /* UIView+Frame.m in Sources */,
@@ -1074,6 +1077,7 @@
 				0698A9481EAF2966005B375D /* NSData+Encrypt.m in Sources */,
 				0698A95F1EAF2966005B375D /* UIView+Nib.m in Sources */,
 				0698A9691EAF2966005B375D /* GFRegularExp.m in Sources */,
+				75F87A481EE84FC700942208 /* CNIncomeCell.m in Sources */,
 				7517987D1EE6F3D200259E0E /* CShowViewController.m in Sources */,
 				0698A9581EAF2966005B375D /* UIImage+Launchimage.m in Sources */,
 				75F5D5911EDBAE480074BED0 /* UIView+Shadow.m in Sources */,
